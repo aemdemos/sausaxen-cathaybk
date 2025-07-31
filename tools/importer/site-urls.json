@@ -150,18 +150,6 @@
       "source": "MANUAL",
       "targetPath": "/cathaybk/personal/product/deposit/service-calculate/",
       "id": "fd733359ace4a1796e8663261ca1bdf5b87084e4"
-    },
-    {
-      "url": "https://www.cathayrobo.com/welcome/news/20250721/",
-      "source": "MANUAL",
-      "targetPath": "/welcome/news/20250721/",
-      "id": "30a8db8412818766747def7baed07652c2992bc1"
-    },
-    {
-      "url": "https://www.cathayrobo.com/welcome/trends/articles/050262/",
-      "source": "MANUAL",
-      "targetPath": "/welcome/trends/articles/050262/",
-      "id": "6ed3b22131b73c60bacc2d0376ded48468445662"
     }
   ],
   "crawlOptions": {
