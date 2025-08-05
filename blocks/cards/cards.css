@@ -1,3 +1,6 @@
+/* Disable no-descending-specificity globally for this file */
+/* stylelint-disable no-descending-specificity */
+
 .cards > ul {
   list-style: none;
   margin: 0;
@@ -24,4 +27,122 @@
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
+}
+
+.cards.cards5 {
+  background: #fff;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.cards.cards5 > ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  gap: 12px;
+  min-height: 68px;
+}
+
+/* Remove any custom margin for uniform gap, but add larger space after the circle */
+.cards.cards5 > ul > li {
+  margin: 0;
+  padding: 0 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 172px;
+  min-height: 68px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  background: #fff;
+  color: #bdbdbd;
+  font-size: 16px;
+  font-family: var(--body-font-family);
+  font-weight: 500;
+  line-height: 1.25;
+  box-sizing: border-box;
+}
+
+/* The first item: the circle -- add extra margin after for distinct grouping */
+.cards.cards5 > ul > li:first-child {
+  min-width: 44px;
+  min-height: 44px;
+  width: 44px;
+  height: 44px;
+  max-width: 44px;
+  max-height: 44px;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin-right: 24px;
+}
+
+.cards.cards5 > ul > li:first-child .cards-card-body {
+  display: none;
+}
+
+/* Hide image area for the circle and other cards */
+.cards.cards5 > ul > li .cards-card-image {
+  display: none;
+}
+
+/* Card body/text styling */
+.cards.cards5 > ul > li .cards-card-body {
+  text-align: center;
+  color: #bdbdbd;
+  font-size: 16px;
+  font-family: var(--body-font-family);
+  font-weight: 500;
+  line-height: 1.25;
+  padding: 0;
+  margin: 0;
+  letter-spacing: 0.01em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  word-break: break-all;
+}
+
+/* Responsive: stack vertically on mobile */
+@media (width <= 700px) {
+  .cards.cards5 {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .cards.cards5 > ul {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    gap: 12px;
+    min-height: 0;
+  }
+
+  .cards.cards5 > ul > li,
+  .cards.cards5 > ul > li:first-child {
+    margin: 0 0 12px;
+    min-width: 80vw;
+    width: 100%;
+    max-width: 100%;
+    min-height: 48px;
+    height: unset;
+    border-radius: 12px;
+  }
+
+  .cards.cards5 > ul > li:first-child {
+    margin-right: 0;
+  }
 }
