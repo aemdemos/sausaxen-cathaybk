@@ -518,8 +518,6 @@
   justify-content: flex-start;
   min-height: 0;
 }
-
-/* Card body (for spacing control) */
 .cards.cards12 .cards-card-body {
   display: flex;
   flex-direction: column;
@@ -527,8 +525,6 @@
   min-height: 0;
   gap: 0;
 }
-
-/* Card Title */
 .cards.cards12 .cards-card-body > p:first-child strong {
   color: #27b36a;
   font-size: 17px;
@@ -540,8 +536,6 @@
   line-height: 1.16;
   position: relative;
 }
-
-/* Divider under title, with more breathing room */
 .cards.cards12 .cards-card-body > p:first-child strong::after {
   display: block;
   width: 20px;
@@ -554,8 +548,6 @@
   left: 0;
   content: "";
 }
-
-/* Features: tight and consistent */
 .cards.cards12 .cards-card-body > p:not(:first-child):not(.button-container):not(:last-child):not(:has(a)):not(:has(.button)) {
   color: #232323;
   font-size: 15px;
@@ -570,14 +562,10 @@
   padding-left: 0;
   min-height: 22px;
 }
-
-/* Remove bold from features */
 .cards.cards12 .cards-card-body > p:not(:first-child):not(.button-container):not(:last-child):not(:has(a)):not(:has(.button)) strong {
   font-weight: 400;
   color: inherit;
 }
-
-/* Smaller, less saturated green bullet */
 .cards.cards12 .cards-card-body > p:not(:first-child):not(.button-container):not(:last-child):not(:has(a)):not(:has(.button))::before {
   width: 9px;
   height: 9px;
@@ -590,8 +578,6 @@
   display: inline-block;
   content: "";
 }
-
-/* Remove bullet/padding from title, button, info */
 .cards.cards12 .cards-card-body > p:first-child,
 .cards.cards12 .cards-card-body > p.button-container,
 .cards.cards12 .cards-card-body > p:last-child,
@@ -602,8 +588,6 @@
   min-height: unset;
   margin: 0;
 }
-
-/* Info row: subtle, small text and gray dot, tight to features and button */
 .cards.cards12 .cards-card-body > p:has(a[title*="注意事項"]) {
   display: flex;
   flex-direction: row;
@@ -616,8 +600,6 @@
   font-weight: 400;
   letter-spacing: 0;
 }
-
-/* Info row dot: smaller, lighter */
 .cards.cards12 .cards-card-body > p:has(a[title*="注意事項"])::before {
   display: inline-block;
   width: 7px;
@@ -630,16 +612,12 @@
   align-self: center;
   content: "";
 }
-
-/* Info link: light blue-gray, smaller */
 .cards.cards12 .cards-card-body > p:has(a[title*="注意事項"]) a {
   color: #8db3ce;
   font-size: 11px;
   text-decoration: underline;
   margin-left: 1px;
 }
-
-/* Hide any extra icons/images/links except intended label/link */
 .cards.cards12 .cards-card-body > p:has(a[title*="注意事項"]) img,
 .cards.cards12 .cards-card-body > p:has(a[title*="注意事項"]) picture,
 .cards.cards12 .cards-card-body > p:has(a[title*="注意事項"]) a:not([title*="注意事項"]) {
@@ -649,8 +627,6 @@
 .cards.cards12 .cards-card-body > p:has(img) {
   display: none;
 }
-
-/* Outlined button styles, tighter vertical grouping */
 .cards.cards12 .cards-card-body .button-container {
   display: flex;
   flex-direction: row;
@@ -700,5 +676,153 @@
   .cards.cards12 .cards-card-body a.button {
     width: 100%;
     min-width: 0;
+  }
+}
+
+
+.cards {
+  background: #f9f9f9;
+  margin: 0 auto;
+  padding-left: 32px;
+  padding-right: 32px;
+  width: 100%;
+  max-width: 1200px;
+  box-sizing: border-box;
+}
+
+.cards > ul {
+  display: block;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 100%;
+  max-width: 100%;
+  background: transparent;
+}
+
+.cards > ul > li {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  background: #fff;
+  padding: 24px 0;
+  border: none;
+  border-bottom: 1px solid #ededed;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+/* Remove border for last card */
+.cards > ul > li:last-child {
+  border-bottom: none;
+}
+
+/* Remove left margin; flag lines up with card padding */
+.cards .cards-card-image {
+  flex: 0 0 64px;
+  max-width: 64px;
+  min-width: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-left: 0;
+  margin-right: 0;
+  padding: 0;
+}
+
+/* Flag image sizing */
+.cards .cards-card-image img {
+  width: 48px;
+  height: 32px;
+  object-fit: contain;
+  display: block;
+  border-radius: 0;
+  box-shadow: none;
+  margin: 0;
+}
+
+/* Card body right of flag, full width, text left-aligned */
+.cards .cards-card-body {
+  flex: 1 1 0;
+  margin: 0;
+  padding-left: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Typography and spacing for text */
+.cards .cards-card-body > p {
+  color: #4a4a4a;
+  font-size: 14px;
+  margin: 0 0 6px 0;
+  line-height: 1.5;
+}
+
+.cards .cards-card-body > p strong {
+  font-size: 16px;
+  color: #222;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.cards .cards-card-body .button-container {
+  margin-top: 8px;
+  margin-bottom: 0;
+}
+
+/* Button refinement, border, hover override for correct visual appearance */
+.cards .cards-card-body .button {
+  background: #fff;
+  color: #4a4a4a;
+  border: 1px solid #4a4a4a;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 4px 16px;
+  transition: background 0.2s, color 0.2s;
+  box-shadow: none;
+  margin: 0;
+}
+
+.cards .cards-card-body .button:hover,
+.cards .cards-card-body .button:focus {
+  background: #4a4a4a;
+  color: #fff;
+  border-color: #4a4a4a;
+  text-decoration: none;
+}
+
+/* Responsive: Stack vertically on mobile, maintain left alignment at all sizes */
+@media (max-width: 900px) {
+  .cards {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  .cards > ul > li {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  .cards .cards-card-body {
+    padding-left: 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  .cards > ul > li {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 18px 0 18px 0;
+  }
+  .cards .cards-card-image {
+    margin: 0 0 12px 0;
+    min-width: 0;
+    max-width: none;
+    justify-content: flex-start;
+  }
+  .cards .cards-card-body {
+    padding-left: 0;
+    width: 100%;
   }
 }
