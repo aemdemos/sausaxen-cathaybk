@@ -597,8 +597,6 @@
   background: #fff;
   padding: 0;
 }
-
-/* 3-column grid */
 .columns.columns18 > div {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -614,8 +612,6 @@
     gap: 32px;
   }
 }
-
-/* Card: reduce left/right/top/bottom padding for compactness */
 .columns.columns18 > div > div {
   display: flex;
   flex-direction: column;
@@ -627,8 +623,6 @@
   background: #fff;
   width: 100%;
 }
-
-/* Icon row: tighter to top/right, consistent for all columns */
 .columns.columns18 > div > div > p:first-child {
   width: 100%;
   display: flex;
@@ -639,8 +633,6 @@
   padding: 0;
   min-height: 36px;
 }
-
-/* Icon size and ensure it's within card boundary */
 .columns.columns18 > div > div > p:first-child picture,
 .columns.columns18 > div > div > p:first-child img {
   width: 34px;
@@ -649,8 +641,6 @@
   margin-top: 0;
   margin-right: 0;
 }
-
-/* Text and headings: left-aligned, less bottom margin */
 .columns.columns18 > div > div > p:not(:first-child) {
   text-align: left;
   color: #505050;
@@ -662,8 +652,6 @@
   font-family: var(--body-font-family);
   font-weight: 400;
 }
-
-/* Action links: keep chevron on same line, tighter vertical grouping */
 .columns.columns18 > div > div p a {
   display: inline-flex;
   align-items: center;
@@ -684,8 +672,6 @@
   color: #00894d;
   text-decoration: underline;
 }
-
-/* Chevron next to link: small and crisp */
 .columns.columns18 > div > div p a img,
 .columns.columns18 > div > div p a picture {
   width: 16px;
@@ -694,26 +680,18 @@
   vertical-align: middle;
   display: inline-block;
 }
-
-/* Remove extra vertical gap between links */
 .columns.columns18 > div > div p {
   margin: 0;
   padding: 0;
   line-height: 1.6;
   display: block;
 }
-
-/* Tighter grouping between links */
 .columns.columns18 > div > div p a:not(:last-child) {
   margin-bottom: 1px;
 }
-
-/* No extra margin on last p */
 .columns.columns18 > div > div > p:last-child {
   margin-bottom: 0;
 }
-
-/* Vertical divider: starts tighter under icon, ends close to bottom */
 .columns.columns18 > div > div:not(:last-child)::after {
   display: block;
   position: absolute;
@@ -723,7 +701,6 @@
   width: 1px;
   background: #ececec;
   z-index: 1;
-  /* no content property */
 }
 
 @media (max-width: 900px) {
@@ -738,9 +715,157 @@
     display: none;
   }
 }
-
-/* Columns stretch to fill grid cell */
 .columns.columns18 > div > div {
   width: 100%;
   box-sizing: border-box;
+}
+
+
+.columns.columns23 {
+  background: #fff;
+  padding: 0;
+}
+
+/* Main layout: Flex row for 6 cards, denser spacing */
+.columns.columns23 > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  gap: 12px;
+  padding: 18px 0 18px 0;
+  min-height: 0;
+  background: #fff;
+  box-sizing: border-box;
+}
+
+/* Responsive breakpoints */
+@media (max-width: 1200px) {
+  .columns.columns23 > div {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    padding: 16px 0;
+  }
+}
+@media (max-width: 900px) {
+  .columns.columns23 > div {
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 12px 0;
+  }
+  .columns.columns23 > div > div {
+    flex: 0 1 45%;
+    margin-bottom: 24px;
+    max-width: 320px;
+  }
+}
+@media (max-width: 600px) {
+  .columns.columns23 > div {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    padding: 8px 0;
+  }
+  .columns.columns23 > div > div {
+    flex: 1 1 100%;
+    max-width: none;
+    margin-bottom: 16px;
+  }
+}
+
+/* Card styles: more compact, denser, tighter max width */
+.columns.columns23 > div > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  flex: 1 1 0;
+  min-width: 0;
+  max-width: 170px;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 0 4px;
+  margin: 0;
+  background: none;
+}
+
+/* Icon container: ensure visibility and spacing */
+.columns.columns23 > div > div > p:first-child {
+  margin: 0 0 10px 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 48px;
+}
+
+/* Icon styles: consistent size, visible even in picture wrapper */
+.columns.columns23 > div > div > p:first-child picture,
+.columns.columns23 > div > div > p:first-child img {
+  display: block;
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  min-height: 48px;
+  max-width: 48px;
+  max-height: 48px;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+/* Title styles: bold but slightly lighter for elegance */
+.columns.columns23 > div > div > p:nth-child(2) {
+  font-size: 15px;
+  font-weight: 500;
+  color: #393939;
+  margin: 0 0 4px 0;
+  line-height: 1.25;
+  text-align: center;
+  letter-spacing: 0.01em;
+}
+
+/* Description: lighter, smaller font, tight vertical spacing */
+.columns.columns23 > div > div > p:not(:first-child):not(:nth-child(2)) {
+  font-size: 12px;
+  color: #848484;
+  margin: 0 0 4px 0;
+  text-align: center;
+  line-height: 1.6;
+}
+
+/* Remove last margin in card */
+.columns.columns23 > div > div > *:last-child {
+  margin-bottom: 0;
+}
+
+/* CTA link styling: green, bold, always inline with icon, no line break */
+.columns.columns23 > div > div a {
+  color: #19ae63;
+  display: inline-flex;
+  align-items: center;
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  white-space: nowrap;
+  margin-top: 2px;
+  margin-bottom: 0;
+  line-height: 1.5;
+}
+
+.columns.columns23 > div > div a img {
+  width: 16px;
+  height: 16px;
+  margin-left: 4px;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.columns.columns23 > div > div a br {
+  display: none;
+}
+
+/* Card text always centered */
+.columns.columns23 > div > div {
+  text-align: center;
 }
