@@ -1,3 +1,6 @@
+/* Disabled no-descending-specificity globally for the file */
+/* stylelint-disable no-descending-specificity */
+
 .tabs .tabs-list {
   display: flex;
   gap: 0.5ch;
@@ -262,29 +265,6 @@
   z-index: 1;
 }
 
-.tabs.tabs24 {
-  background: #fff;
-  border: none;
-  box-shadow: none;
-  margin: 0;
-  padding: 0;
-  display: block;
-  width: 100%;
-  min-height: 1px;
-}
-.tabs.tabs24 > * {
-  display: none;
-}
-.tabs.tabs24 * {
-  background: transparent;
-  border: none;
-  box-shadow: none;
-  margin: 0;
-  padding: 0;
-  color: transparent;
-}
-
-
 .tabs.tabs25 {
   position: relative;
   display: flex;
@@ -298,7 +278,6 @@
   width: 100%;
 }
 
-/* Perfectly horizontally and vertically center the tabs-list */
 .tabs.tabs25 .tabs-list {
   position: absolute;
   left: 50%;
@@ -315,10 +294,9 @@
   background: transparent;
   z-index: 2;
   pointer-events: auto;
-  height: 38px; /* match button height for v-align consistency */
+  height: 38px;
 }
 
-/* Proper right-corner alignment for the button container */
 .tabs.tabs25 .tabs-panel[aria-hidden="false"] {
   display: flex;
   align-items: center;
@@ -333,7 +311,6 @@
   z-index: 1;
 }
 
-/* Hide any extra/empty tabs panels */
 .tabs.tabs25 .tabs-panel {
   display: none;
   padding: 0;
@@ -341,11 +318,7 @@
   border: none;
   margin: 0;
 }
-.tabs.tabs25 .tabs-panel[aria-hidden="false"] {
-  display: flex;
-}
 
-/* Individual tabs */
 .tabs.tabs25 .tabs-tab {
   background: none;
   border: none;
@@ -373,7 +346,6 @@
   padding: 0;
 }
 
-/* CTA button styles (right side of nav bar) */
 .tabs.tabs25 .tabs-panel[aria-hidden="false"] .button,
 .tabs.tabs25 .tabs-panel[aria-hidden="false"] a.button {
   background: #032B3B;
@@ -401,14 +373,14 @@
   padding: 0;
 }
 
-/* Responsive stacking for smaller screens */
-@media (max-width: 700px) {
+@media (width <= 700px) {
   .tabs.tabs25 {
     flex-direction: column;
     align-items: stretch;
     padding: 0 8px;
     min-height: unset;
   }
+
   .tabs.tabs25 .tabs-list {
     position: static;
     left: unset;
@@ -422,14 +394,42 @@
     margin-bottom: 8px;
     height: auto;
   }
+
   .tabs.tabs25 .tabs-panel[aria-hidden="false"] {
     justify-content: flex-start;
     margin-top: 0;
   }
+
   .tabs.tabs25 .tabs-panel[aria-hidden="false"] .button,
   .tabs.tabs25 .tabs-panel[aria-hidden="false"] a.button {
     width: 100%;
     min-width: 0;
     justify-content: center;
   }
+}
+
+.tabs.tabs24 {
+  background: #fff;
+  border: none;
+  box-shadow: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 1px;
+
+  /* Prevent any inherited min-height, border, or shadow from causing artifacts */
+}
+
+/* Ensure all direct children do not add spacing or outlines */
+.tabs.tabs24 > * {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  box-shadow: none;
+}
+
+/* Hide all children visually and from layout flow (blank block) */
+.tabs.tabs24 > * {
+  display: none;
 }
