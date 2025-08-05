@@ -1,4 +1,3 @@
-/* Disable no-descending-specificity globally */
 /* stylelint-disable no-descending-specificity */
 
 .table.block {
@@ -66,7 +65,6 @@
   border: 1px solid;
 }
 
-/* Improved logical grouping for two-column layout */
 .table .block > table > thead > tr > th {
   display: flex;
   flex-direction: row;
@@ -77,7 +75,6 @@
   box-sizing: border-box;
 }
 
-/* Alternate logical blocks between columns */
 .table .block > table > thead > tr > th > :nth-child(n+1):nth-child(-n+20),
 .table .block > table > thead > tr > th > :nth-child(n+41):nth-child(-n+65),
 .table .block > table > thead > tr > th > :nth-child(n+90):nth-child(-n+110) {
@@ -98,7 +95,6 @@
   order: 2;
 }
 
-/* Stack all blocks within column vertically */
 .table .block > table > thead > tr > th > * {
   display: block;
   margin-bottom: 32px;
@@ -108,7 +104,6 @@
   text-align: left;
 }
 
-/* Full-width <hr> styles */
 .table .block > table > thead > tr > th > hr {
   width: calc(100% + 48px);
   min-width: calc(100% + 48px);
@@ -122,7 +117,6 @@
   order: 1000;
 }
 
-/* Responsive: stack all blocks vertically on mobile */
 @media (width <= 900px) {
   .table .block > table > thead > tr > th {
     flex-direction: column;
@@ -143,7 +137,6 @@
   }
 }
 
-/* Section and table visual tweaks */
 .table .block p,
 .table .block ul,
 .table .block ol,
@@ -229,7 +222,230 @@
   margin-top: 0;
 }
 
-/* Remove double margin on last elements in column */
 .table .block > table > thead > tr > th > *:last-child {
   margin-bottom: 0;
+}
+
+/* OUTERMOST LAYOUT: Use grid for 2-column desktop layout, fallback to single column mobile */
+.table {
+  background: #fff;
+  padding: 40px 0;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 4%);
+  max-width: 1200px;
+  margin: 40px auto;
+  font-family: "Noto Sans TC", Arial, sans-serif;
+  color: #595959;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+/* Real 2-column split for desktop */
+.table > .table-wrapper > .block.table > table > thead > tr > th {
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  gap: 56px;
+  padding: 0 48px;
+  box-sizing: border-box;
+  background: none;
+  border: none;
+  align-items: flex-start;
+  width: 100%;
+}
+
+/* Single column for mobile */
+@media (width <= 1199px) {
+  .table > .table-wrapper > .block.table > table > thead > tr > th {
+    display: block;
+    padding: 0 8px;
+  }
+}
+
+/* --- COLUMN SPLIT --- */
+
+.table > .table-wrapper > .block.table > table > thead > tr > th > *:nth-child(-n+68) {
+  grid-column: 1;
+}
+
+.table > .table-wrapper > .block.table > table > thead > tr > th > *:nth-child(n+69) {
+  grid-column: 2;
+}
+
+/* Consistent spacing/vertical rhythm */
+.table > .table-wrapper > .block.table > table > thead > tr > th > * {
+  margin-bottom: 26px;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+.table > .table-wrapper > .block.table > table > thead > tr > th > *:last-child {
+  margin-bottom: 0;
+}
+
+/* Reset left alignment for all children */
+.table > .table-wrapper > .block.table > table > thead > tr > th > *,
+.table p, .table ul, .table ol, .table img, .table .button, .table table {
+  text-align: left;
+  margin-left: 0;
+  margin-right: 0;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+/* == TABLES == */
+.table table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  font-size: 14px;
+  margin-bottom: 24px;
+}
+
+.table th,
+.table td {
+  padding: 10px 8px;
+  border-bottom: 1px solid #f4f4f4;
+  text-align: left;
+  color: #595959;
+  font-weight: 400;
+  background: none;
+  font-size: 14px;
+}
+
+.table th {
+  color: #bfbfbf;
+  font-size: 13px;
+  font-weight: 400;
+  background: none;
+  border-bottom: 2px solid #ededed;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.table table thead th[colspan="2"],
+.table table th[colspan="2"] {
+  color: #bfbfbf;
+  font-weight: 400;
+  font-size: 12px;
+  background: none;
+  text-align: left;
+  border-bottom: 1px solid #f4f4f4;
+  padding: 6px 8px;
+}
+
+.table table thead th {
+  color: #bfbfbf;
+  font-weight: 400;
+  font-size: 13px;
+  background: none;
+}
+
+/* == HEADINGS / LABELS == */
+.table p {
+  color: #595959;
+  font-size: 14px;
+  margin: 8px 0;
+  line-height: 1.6;
+}
+
+.table p.section-header,
+.table p:only-child,
+.table > .table-wrapper > .block.table > table > thead > tr > th > p:first-child {
+  color: #bfbfbf;
+  font-size: 13px;
+  margin-bottom: 12px;
+  font-weight: 400;
+}
+
+/* == BUTTONS == */
+.table .button,
+.table .button-container .button {
+  display: inline-block;
+  background: #fff;
+  border: 1px solid #bfbfbf;
+  color: #595959;
+  border-radius: 2px;
+  padding: 6px 24px;
+  font-size: 14px;
+  font-weight: 400;
+  box-shadow: none;
+  margin: 0 8px 8px 0;
+  text-align: left;
+  cursor: pointer;
+  text-decoration: none;
+  line-height: 1.45;
+  white-space: nowrap;
+  transition: box-shadow 0.2s, background 0.2s;
+}
+
+.table .button:hover,
+.table .button:focus {
+  background: #f5f5f5;
+  border-color: #888;
+  outline: none;
+}
+
+.table .button-container {
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+/* == DIVIDERS == */
+.table hr {
+  border: none;
+  height: 8px;
+  background: #ededed;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 4%);
+  border-radius: 4px;
+  margin: 40px 0 32px -48px;
+  width: calc(100% + 96px);
+  min-width: 0;
+  align-self: stretch;
+}
+
+@media (width <= 1199px) {
+  .table hr {
+    margin-left: 0;
+    width: 100%;
+  }
+}
+
+/* == LISTS == */
+.table ul,
+.table ol {
+  color: #595959;
+  font-size: 13px;
+  padding-left: 18px;
+  margin: 8px 0;
+}
+
+/* == IMAGES == */
+.table img {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 8px 0 0;
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  background: none;
+  border-radius: 4px;
+  box-shadow: none;
+  max-width: unset;
+}
+
+/* Responsive padding for outer .table */
+@media (width <= 767px) {
+  .table {
+    padding: 16px 0;
+    border-radius: 0;
+    margin: 0;
+  }
+
+  .table > .table-wrapper > .block.table > table > thead > tr > th {
+    padding: 0 4px;
+  }
 }
