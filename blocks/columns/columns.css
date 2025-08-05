@@ -861,8 +861,6 @@
   overflow: hidden;
   padding: 0;
 }
-
-/* Main row: three columns side by side */
 .columns.columns27 > div {
   display: flex;
   flex-direction: row;
@@ -875,8 +873,6 @@
   gap: 0;
   position: relative;
 }
-
-/* Each column: stack and center headline+button group vertically */
 .columns.columns27 > div > div {
   flex: 1 1 0;
   display: flex;
@@ -888,8 +884,6 @@
   padding: 0 12px;
   box-sizing: border-box;
 }
-
-/* Vertical divider: only as tall as content group, centered vertically */
 .columns.columns27 > div > div:not(:last-child) {
   border-right: none;
 }
@@ -904,11 +898,8 @@
   background: rgba(255,255,255,0.41);
   z-index: 2;
   pointer-events: none;
-  /* Use before for the divider, no content property */
   content: "";
 }
-
-/* Headline: uppercased, medium weight, centered, with spacing below */
 .columns.columns27 .button-container:first-of-type .button,
 .columns.columns27 > div > div > p.button-container {
   color: #fff;
@@ -929,13 +920,9 @@
   line-height: 1.2;
   display: block;
 }
-
-/* Hide extra paragraphs, but keep first (headline) and last (button) */
 .columns.columns27 > div > div > p:not(.button-container):not(:last-of-type):not(:first-of-type) {
   display: none;
 }
-
-/* Button area: always show last p, center and style as CTA */
 .columns.columns27 > div > div > p:last-of-type {
   display: flex;
   justify-content: center;
@@ -945,8 +932,6 @@
   min-height: 64px;
   width: 100%;
 }
-
-/* White circular button: target picture or img in last p */
 .columns.columns27 > div > div > p:last-of-type picture,
 .columns.columns27 > div > div > p:last-of-type img {
   display: flex;
@@ -971,19 +956,13 @@
   border-radius: 0;
   margin: 0;
 }
-
-/* Hide extra links or breaks in last p unless it's an image link */
 .columns.columns27 > div > div > p:last-of-type > a:not([href*=".png"]):not([href*=".webp"]):not([href*=".jpg"]),
 .columns.columns27 > div > div > p:last-of-type > br {
   display: none;
 }
-
-/* Hide any extra buttons that are not the main header */
 .columns.columns27 .button-container .button:not(:first-child) {
   display: none;
 }
-
-/* Responsive: stack vertically and remove dividers on mobile */
 @media (max-width: 900px) {
   .columns.columns27 > div {
     flex-direction: column;
@@ -1000,5 +979,270 @@
   }
   .columns.columns27 > div > div:last-child {
     border-bottom: none;
+  }
+}
+
+
+.columns.columns39 {
+  width: 100%;
+  max-width: 1280px;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: 24px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+  padding: 48px 64px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  gap: 56px;
+}
+
+@media (max-width: 1200px) {
+  .columns.columns39 {
+    flex-direction: column;
+    padding: 32px 8px;
+    gap: 32px;
+    max-width: 98vw;
+  }
+}
+
+.columns.columns39 > div {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 0;
+}
+
+/* --- Tabs --- */
+.columns.columns39 > div > div:first-child {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* Tabs as a horizontal bar */
+.columns.columns39 > div > div:first-child .button-container {
+  display: flex;
+  flex-direction: row;
+  gap: 0;
+  justify-content: flex-start;
+  align-items: flex-end;
+  margin: 0 0 12px 0;
+  padding: 0;
+}
+
+/* Only top two .button-container are tabs: ensure horizontal layout */
+.columns.columns39 > div > div:first-child > .button-container:nth-child(-n+2) {
+  margin-bottom: 0;
+  margin-right: 24px;
+  padding: 0;
+}
+.columns.columns39 > div > div:first-child > .button-container:nth-child(-n+2) .button {
+  background: none;
+  color: #15803d;
+  font-size: 20px;
+  font-weight: 700;
+  border-radius: 0;
+  border: none;
+  border-bottom: 4px solid transparent;
+  padding: 0 32px 12px 0;
+  margin: 0;
+  box-shadow: none;
+  transition: color .2s, border-bottom-color .2s;
+  line-height: 1;
+  min-width: 110px;
+  text-align: center;
+  outline: none;
+}
+
+.columns.columns39 > div > div:first-child > .button-container:nth-child(-n+2) .button[aria-current="true"],
+.columns.columns39 > div > div:first-child > .button-container:nth-child(-n+2) .button.active {
+  color: #15803d;
+  border-bottom: 4px solid #15803d;
+}
+
+.columns.columns39 > div > div:first-child > .button-container:nth-child(-n+2) .button:not([aria-current="true"]):not(.active) {
+  color: #888;
+  border-bottom: 4px solid transparent;
+}
+
+/* --- Form fields spacing --- */
+.columns.columns39 > div > div:first-child > p {
+  margin: 14px 0 0 0;
+  font-size: 16px;
+  color: #444;
+  line-height: 1.5;
+  text-align: left;
+}
+.columns.columns39 > div > div:first-child > p:first-of-type {
+  margin-top: 0;
+}
+
+/* --- Action button --- */
+.columns.columns39 > div > div:first-child > .button-container:not(:nth-child(-n+2)) {
+  margin-top: 22px;
+  margin-bottom: 26px;
+  justify-content: flex-start;
+  display: flex;
+}
+.columns.columns39 .button,
+.columns.columns39 a.button {
+  background: #15803d;
+  color: #fff;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 600;
+  border: none;
+  box-shadow: 0 2px 8px rgba(39,174,96,0.2);
+  padding: 16px 0;
+  width: 92%;
+  margin: 0 auto;
+  text-align: center;
+  transition: background .2s;
+  text-decoration: none;
+  white-space: nowrap;
+  display: block;
+}
+
+.columns.columns39 .button:hover,
+.columns.columns39 a.button:hover,
+.columns.columns39 .button:focus,
+.columns.columns39 a.button:focus {
+  background: #12632f;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* --- Lower info/result area: compact grouping --- */
+.columns.columns39 > div > div:last-child {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* Icon/image */
+.columns.columns39 > div > div:last-child > p:first-child {
+  margin-top: 0;
+  margin-bottom: 2px;
+  display: flex;
+  justify-content: center;
+}
+
+.columns.columns39 > div > div:last-child > p:first-child picture,
+.columns.columns39 > div > div:last-child > p:first-child img {
+  display: block;
+  margin: 0 auto 0 auto;
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
+.columns.columns39 > div > div:last-child > p:nth-child(2) {
+  color: #888;
+  font-size: 16px;
+  margin: 0 0 2px 0;
+  text-align: center;
+}
+
+.columns.columns39 > div > div:last-child > p:nth-child(3) {
+  margin-bottom: 4px;
+}
+
+/* --- Info/result "cards" row --- */
+.columns.columns39 > div > div:last-child .info-cards-row,
+.columns.columns39 > div > div:last-child > .info-cards-row {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  justify-content: center;
+  width: auto;
+  margin: 4px 0 0 0;
+}
+
+/* For legacy markup, apply to any two adjacent info card <p>s (with info icon) */
+.columns.columns39 > div > div:last-child > p:has(img[width="20"][height="20"]) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f7fffa;
+  border: 1.5px solid #d1fadf;
+  border-radius: 12px;
+  padding: 22px 40px;
+  min-width: 220px;
+  max-width: 270px;
+  text-align: center;
+  color: #15803d;
+  font-size: 24px;
+  margin: 0 8px 0 0;
+  gap: 12px;
+  box-shadow: 0 2px 8px rgba(39,174,96,0.04);
+  font-weight: 500;
+}
+
+.columns.columns39 > div > div:last-child > p:has(img[width="20"][height="20"]):last-child {
+  margin-right: 0;
+}
+
+.columns.columns39 > div > div:last-child > p:has(img[width="20"][height="20"]) img {
+  width: 32px;
+  height: 32px;
+}
+
+/* Reduce margin between info card row and next text */
+.columns.columns39 > div > div:last-child > p:has(img[width="20"][height="20"]) + p {
+  margin-top: 10px;
+}
+
+/* Tighter grouping for icon + description + info cards */
+.columns.columns39 > div > div:last-child > p:first-child,
+.columns.columns39 > div > div:last-child > p:nth-child(2),
+.columns.columns39 > div > div:last-child > p:has(img[width="20"][height="20"]) {
+  margin-bottom: 2px;
+}
+
+/* Compact vertical section grouping */
+.columns.columns39 > div > div:last-child > p {
+  margin-top: 8px;
+  margin-bottom: 2px;
+  line-height: 1.5;
+}
+
+/* --- General: reduce vertical whitespace for a card feel --- */
+.columns.columns39 > div > div:first-child > p:first-child {
+  margin-top: 8px;
+}
+.columns.columns39 > div > div:first-child > p:last-child {
+  margin-bottom: 0;
+}
+
+/* Responsive adjustment for info cards */
+@media (max-width: 900px) {
+  .columns.columns39 {
+    flex-direction: column;
+    padding: 24px 4px;
+    gap: 24px;
+    min-width: 0;
+  }
+  .columns.columns39 > div {
+    gap: 16px;
+  }
+  .columns.columns39 > div > div:last-child .info-cards-row,
+  .columns.columns39 > div > div:last-child > .info-cards-row {
+    flex-direction: column;
+    gap: 8px;
+    align-items: stretch;
+  }
+  .columns.columns39 > div > div:last-child > p:has(img[width="20"][height="20"]) {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    margin: 0 0 8px 0;
+    font-size: 20px;
+    padding: 16px 12px;
   }
 }
