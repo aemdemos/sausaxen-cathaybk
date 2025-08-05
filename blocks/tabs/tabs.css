@@ -1,4 +1,4 @@
-/* Disable no-descending-specificity rule globally */
+/* Disable the no-descending-specificity rule */
 /* stylelint-disable no-descending-specificity */
 
 .tabs .tabs-list {
@@ -60,171 +60,218 @@
 }
 
 .tabs.tabs6 {
-  max-width: 1100px;
+  width: 100%;
+  max-width: 1200px;
   margin: 56px auto 0;
   background: #fff;
-  border-radius: 18px;
-  box-shadow: 0 4px 24px 0 rgb(34 200 151 / 10%);
-  position: relative;
+  border-radius: 24px;
+  box-shadow: 0 4px 24px rgb(0 0 0 / 6%);
   padding: 0;
-  overflow: visible;
-  min-height: 320px;
+  position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  align-items: stretch;
+  overflow: visible;
+  min-height: unset; /* Moved here to remove duplicate selector */
 }
 
-/* === TABS NAVIGATION === */
+/* Restore and float the tab list above the card */
 .tabs.tabs6 .tabs-list {
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  gap: 18px;
-  margin: 0 0 -24px;
-  padding: 0;
-  position: relative;
+  gap: 24px;
+  position: absolute;
+  top: -38px;
+  left: 0;
+  width: 100%;
   z-index: 3;
+  min-height: 56px;
   pointer-events: auto;
-  min-height: 54px;
+  background: transparent;
 }
 
-/* Tab buttons: pill shape, shadow, gradient for active */
+/* Style tab buttons */
 .tabs.tabs6 .tabs-list button {
-  background: #fff;
-  color: #018a63;
-  font-size: 1.15rem;
+  width: 220px;
+  height: 56px;
+  font-size: 20px;
   font-weight: bold;
+  border-radius: 12px 12px 0 0;
   border: none;
-  border-radius: 16px 16px 0 0;
-  height: 54px;
-  min-width: 142px;
-  padding: 0 38px;
-  box-shadow: 0 2px 8px rgb(34 200 151 / 10%);
-  cursor: pointer;
-  transition: all 0.2s;
-  outline: none;
-  margin: 0;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 8%);
+  background: #fff;
+  color: #38a1db;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
+  padding: 0 44px;
+  margin: 0;
+  cursor: pointer;
 }
 
-.tabs.tabs6 .tabs-list button[aria-selected='true'] {
-  background: linear-gradient(90deg, #4DD0A6 0%, #6A82FB 100%);
+.tabs.tabs6 .tabs-list button[aria-selected="true"] {
+  background: linear-gradient(90deg, #00c3a3, #38a1db);
   color: #fff;
   font-weight: bold;
-  box-shadow: 0 6px 18px 0 rgb(77 208 166 / 20%);
+  box-shadow: 0 6px 18px 0 rgb(56 161 219 / 18%);
   z-index: 4;
 }
 
-@media (width <= 600px) {
+@media (width <= 700px) {
   .tabs.tabs6 .tabs-list {
-    gap: 8px;
+    gap: 10px;
     min-height: 42px;
-    margin-bottom: -14px;
+    top: -24px;
   }
 
   .tabs.tabs6 .tabs-list button {
-    min-width: 80px;
+    min-width: 100px;
     font-size: 1rem;
-    padding: 0 14px;
+    padding: 0 10px;
     height: 42px;
-    border-radius: 13px 13px 0 0;
+    border-radius: 10px 10px 0 0;
   }
 }
 
-/* === MAIN PANEL === */
+/* Main content panel: remove min-height and excessive padding, center content vertically */
 .tabs.tabs6 .tabs-panel {
   border: none;
-  margin-top: 0;
-  box-shadow: none;
   background: transparent;
+  box-shadow: none;
+  margin-top: 0;
   padding: 0;
-  overflow: visible;
-  min-height: 260px;
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+  display: block;
 }
 
-/* === MAIN CONTENT AREA === */
-.tabs.tabs6 .tabs-panel[aria-hidden='false'] > div {
+/* Main feature: side-by-side layout for first content row only */
+.tabs.tabs6 .tabs-panel[aria-hidden="false"] > div {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-  gap: 60px;
-  padding: 54px 56px 44px 54px;
-  min-height: 220px;
+  gap: 48px;
+  padding: 44px 60px 28px;
   width: 100%;
   box-sizing: border-box;
 }
 
+/* Responsive stacking on mobile */
 @media (width <= 900px) {
-  .tabs.tabs6 .tabs-panel[aria-hidden='false'] > div {
+  .tabs.tabs6 .tabs-panel[aria-hidden="false"] > div {
     flex-direction: column;
     align-items: stretch;
-    gap: 32px;
-    padding: 18px 6px 20px;
-    min-height: 0;
+    gap: 24px;
+    padding: 14px 2vw 16px;
+  }
+
+  .tabs.tabs6 .tabs-panel[aria-hidden="false"] > div > p:first-child,
+  .tabs.tabs6 .tabs-panel[aria-hidden="false"] > div > *:not(:first-child) {
+    width: 100%;
+    max-width: 100%;
   }
 }
 
-/* Illustration column (first <p>) */
-.tabs.tabs6 .tabs-panel[aria-hidden='false'] > div > p:first-child {
-  flex: 0 0 290px;
-  max-width: 290px;
-  margin: 0;
+/* Left column: Illustration */
+.tabs.tabs6 .tabs-panel[aria-hidden="false"] > div > p:first-child {
+  flex: 0 0 330px;
+  max-width: 330px;
+  min-width: 200px;
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 120px;
+  margin: 0;
+  min-height: 180px;
+  padding: 0;
 }
 
-@media (width <= 900px) {
-  .tabs.tabs6 .tabs-panel[aria-hidden='false'] > div > p:first-child {
-    max-width: 100%;
-    width: 100%;
-    margin-bottom: 0;
-    justify-content: center;
-  }
+.tabs.tabs6 .tabs-panel[aria-hidden="false"] > div > p:first-child img,
+.tabs.tabs6 .tabs-panel[aria-hidden="false"] > div > p:first-child picture {
+  width: 320px;
+  height: 220px;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  margin: 0 auto;
+  display: block;
 }
 
-/* Right column (all but first <p>) */
-.tabs.tabs6 .tabs-panel[aria-hidden='false'] > div > *:not(:first-child) {
+/* Right column: all other direct siblings (text block) */
+.tabs.tabs6 .tabs-panel[aria-hidden="false"] > div > *:not(:first-child) {
   flex: 1 1 0;
   min-width: 0;
+  margin: 0;
+  max-width: 100%;
+  display: block;
 }
 
-/* Heading (second <p>) */
-.tabs.tabs6 .tabs-panel[aria-hidden='false'] > div > p:nth-child(2) {
+/* Typography for main block */
+.tabs.tabs6 .tabs-panel[aria-hidden="false"] > div > p:nth-child(2) {
   font-size: 2rem;
   font-weight: bold;
-  margin-bottom: 18px;
+  margin-bottom: 14px;
   color: #222;
   line-height: 1.2;
 }
 
-/* Paragraph text */
-.tabs.tabs6 .tabs-panel[aria-hidden='false'] > div > p:not(:first-child):not(:nth-child(2)) {
+.tabs.tabs6 .tabs-panel[aria-hidden="false"] > div > p:not(:first-child):not(:nth-child(2)) {
   font-size: 1.13rem;
-  color: #444;
-  margin-bottom: 18px;
+  color: #333;
+  margin-bottom: 10px;
   line-height: 1.7;
+  margin-top: 0;
 }
 
-/* Info row/CTA (last <p>) */
-.tabs.tabs6 .tabs-panel[aria-hidden='false'] > div > p:last-child {
+.tabs.tabs6 .tabs-panel[aria-hidden="false"] > div > p:last-child {
   display: flex;
   align-items: center;
   gap: 8px;
   font-size: 1rem;
-  color: #018a63;
+  color: #38a1db;
+  margin-bottom: 0;
 }
 
-/* Remove block border if inherited from prior styles */
-.tabs.tabs6 {
-  border: none;
+/* Steps/lists: no extra gap at top after main flex row */
+.tabs.tabs6 .tabs-panel[aria-hidden="false"] > div + ol,
+.tabs.tabs6 .tabs-panel[aria-hidden="false"] > div + ul,
+.tabs.tabs6 .tabs-panel[aria-hidden="false"] > div + p {
+  margin-top: 0.5em;
+}
+
+/* Steps/lists appearance */
+.tabs.tabs6 .tabs-panel[aria-hidden="false"] > div > ol,
+.tabs.tabs6 .tabs-panel[aria-hidden="false"] > div > ul {
+  margin-left: 18px;
+  margin-bottom: 14px;
+  font-size: 1rem;
+  color: #444;
+}
+
+.tabs.tabs6 .tabs-panel[aria-hidden="false"] > div > ol > li {
+  margin-bottom: 8px;
+  line-height: 1.7;
+  display: flex;
+  align-items: flex-start;
+}
+
+.tabs.tabs6 .tabs-panel[aria-hidden="false"] > div > ol > li picture,
+.tabs.tabs6 .tabs-panel[aria-hidden="false"] > div > ol > li img {
+  vertical-align: middle;
+  margin-right: 10px;
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  margin-top: 2px;
+}
+
+/* Bottom accent bar */
+.tabs.tabs6::after {
+  display: block;
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 4px;
+  border-radius: 0 0 24px 24px;
+  background: linear-gradient(90deg, #00c3a3, #38a1db);
+  z-index: 1;
 }
