@@ -1,4 +1,4 @@
-/* Disable no-descending-specificity rule as advised */
+/* Disable no-descending-specificity rule to address selector order validation errors */
 /* stylelint-disable no-descending-specificity */
 
 .columns > div {
@@ -22,7 +22,7 @@
   display: block;
 }
 
-@media (min-width: 900px) {
+@media (width >= 900px) {
   .columns > div {
     align-items: center;
     flex-direction: unset;
@@ -40,7 +40,6 @@
   padding: 0;
 }
 
-/* Use grid for two columns horizontally, slightly more compact gap */
 .columns.columns1 > div {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -50,14 +49,13 @@
   box-sizing: border-box;
 }
 
-@media (max-width: 900px) {
+@media (width <= 900px) {
   .columns.columns1 > div {
     grid-template-columns: 1fr;
     gap: 28px;
   }
 }
 
-/* Each column: image left, text right, top-aligned for original visual grouping */
 .columns.columns1 > div > div {
   display: flex;
   flex-direction: row;
@@ -67,7 +65,6 @@
   width: 100%;
 }
 
-/* Illustration: optimal size for balance */
 .columns.columns1 picture,
 .columns.columns1 img {
   display: block;
@@ -81,7 +78,6 @@
   flex-shrink: 0;
 }
 
-/* Text block: vertical stack, max-width for both panels for symmetry */
 .columns.columns1 > div > div > p {
   margin: 0 0 8px;
   color: #333;
@@ -89,11 +85,10 @@
   line-height: 1.6;
   font-family: inherit;
   font-weight: 400;
-  overflow-wrap: break-word; /* Fixed deprecated usage */
+  overflow-wrap: break-word;
   max-width: 320px;
 }
 
-/* Heading: slightly more space below for clarity */
 .columns.columns1 > div > div > p:nth-child(2) {
   font-weight: 700;
   font-size: 1.25rem;
@@ -103,7 +98,6 @@
   line-height: 1.2;
 }
 
-/* Subheading/body: muted color */
 .columns.columns1 > div > div > p:nth-child(3) {
   font-weight: 400;
   font-size: 1rem;
@@ -113,14 +107,12 @@
   line-height: 1.6;
 }
 
-/* Bold text inside body for key lines */
 .columns.columns1 > div > div > p strong {
   color: #131313;
   font-weight: 700;
 }
 
-/* Responsive: Stack image above text on narrow screens, reduce gap and image size */
-@media (max-width: 600px) {
+@media (width <= 600px) {
   .columns.columns1 > div > div {
     flex-direction: column;
     align-items: center;
@@ -142,3 +134,92 @@
     text-align: center;
   }
 }
+
+.columns.columns2 {
+  background: #fff;
+  width: 100%;
+  min-width: 0;
+}
+
+/* Layout: Three columns side by side, vertical center */
+.columns.columns2 > div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-width: 0;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  height: 48px;
+}
+
+/* Each column: center text, no extra vertical space, fill height */
+.columns.columns2 > div > div {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  box-sizing: border-box;
+  height: 100%;
+}
+
+/* All labels: consistent font styling */
+.columns.columns2 > div > div > p {
+  font-size: 12px;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  line-height: 1.2;
+  text-align: center;
+  background: transparent;
+  display: inline-block;
+  position: relative;
+}
+
+/* Left column: green label, underline sits closer & is slightly thicker */
+.columns.columns2 > div > div:nth-child(1) > p {
+  color: #54b16a;
+  padding-bottom: 2px; /* Small space between text and underline */
+
+  /* Underline: gradient, 2.5px thick, 90% width of text, closer to text */
+  background-image: linear-gradient(to right, #70c86c 85%, #d9ecd9 100%);
+  background-repeat: no-repeat;
+  background-size: 90% 2.5px;
+  background-position: center bottom;
+}
+
+/* Center column: dark */
+.columns.columns2 > div > div:nth-child(2) > p {
+  color: #333;
+}
+
+/* Right: muted gray */
+.columns.columns2 > div > div:nth-child(3) > p {
+  color: #b8b8b8;
+}
+
+/* Responsive: stack vertically on narrow screens */
+@media (width <= 599px) {
+  .columns.columns2 > div {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .columns.columns2 > div > div {
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    margin-bottom: 8px;
+    height: auto;
+  }
+}
+
+/* stylelint-enable */
