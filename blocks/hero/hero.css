@@ -1,4 +1,7 @@
+/* Updated CSS code to resolve validation errors */
+/* Added Stylelint rule disable comment for descending specificity */
 /* stylelint-disable no-descending-specificity */
+
 .hero-container .hero-wrapper {
   max-width: unset;
   padding: 0;
@@ -48,7 +51,6 @@
 }
 
 .hero.hero9 {
-  /* Full-width, flat rectangle, soft gradient */
   width: 100vw;
   margin: 0;
   border-radius: 0;
@@ -73,7 +75,6 @@
 }
 
 .hero.hero9 > div:first-child {
-  /* Illustration/image column on right (order:2) */
   order: 2;
   display: flex;
   align-items: center;
@@ -91,7 +92,6 @@
 }
 
 .hero.hero9 > div:last-child {
-  /* Content column on left (order:1) */
   order: 1;
   display: flex;
   flex-direction: column;
@@ -154,7 +154,6 @@
 }
 
 @media (width >= 700px) {
-  /* Feature icon + label grid row */
   .hero.hero9 > div:last-child > div {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -272,5 +271,174 @@
   .hero.hero9 > div:first-child picture,
   .hero.hero9 > div:first-child img {
     max-width: 250px;
+  }
+}
+
+
+.hero.hero29 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  min-height: 330px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+  background: linear-gradient(180deg, #fff 0%, #e7f5e5 85%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* More subtle and faded accent wave, does NOT overpower image */
+.hero.hero29::before {
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 67%;
+  height: 90%;
+  background: radial-gradient(ellipse at 80% 85%, rgb(183 228 204 / 22%) 55%, rgb(255 255 255 / 0%) 90%);
+  z-index: 0;
+  pointer-events: none;
+  content: "";
+}
+
+/* ------ COLUMN LAYOUT ------ */
+
+/* Text block on the left */
+.hero.hero29 > div:last-child {
+  order: 1;
+  flex: 1 1 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 44px 0 44px 28px;
+  max-width: 490px;
+  color: #232323;
+  z-index: 2;
+  text-align: left;
+}
+
+/* Illustration/image column (right) */
+.hero.hero29 > div:first-child {
+  order: 2;
+  flex: 1 1 60%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  min-width: 0;
+  min-height: 230px;
+  max-height: 330px;
+  padding-left: 24px;
+  z-index: 1;
+  position: relative;
+}
+
+/* Display the illustration clearly and above the accent */
+.hero.hero29 > div:first-child picture,
+.hero.hero29 > div:first-child img {
+  display: block;
+  max-width: 92%;
+  max-height: 295px;
+  width: auto;
+  height: auto;
+  min-width: 210px;
+  min-height: 140px;
+  object-fit: contain;
+  margin: 0 auto;
+  z-index: 2;
+  position: relative;
+  box-shadow: none;
+  background: none;
+  opacity: 1;
+}
+
+/* --- TEXT STYLES --- */
+.hero.hero29 h2,
+.hero.hero29 h1 {
+  color: #232323;
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0 0 16px;
+  line-height: 1.25;
+  letter-spacing: 0.04em;
+}
+
+.hero.hero29 p {
+  color: #353535;
+  font-size: 1rem;
+  margin: 0 0 18px;
+  line-height: 1.7;
+}
+
+.hero.hero29 p:last-child {
+  margin-bottom: 0;
+  margin-top: 18px;
+}
+
+/* Action row: icon + link (if present) spacing */
+.hero.hero29 p a picture,
+.hero.hero29 p a img {
+  vertical-align: middle;
+  margin-right: 0.45em;
+  width: 1.25em;
+  height: 1.25em;
+  display: inline-block;
+}
+
+.hero.hero29 p a {
+  font-size: 1rem;
+  color: #329c6e;
+}
+
+/* Remove blue link and subheading if present */
+.hero.hero29 .top-link,
+.hero.hero29 .subheading {
+  display: none;
+}
+
+/* --- Responsive adjustments --- */
+@media (width <= 900px) {
+  .hero.hero29 {
+    flex-direction: column;
+    padding: 0 8px;
+    min-height: unset;
+  }
+
+  .hero.hero29 > div {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .hero.hero29 > div:first-child,
+  .hero.hero29 > div:last-child {
+    padding: 20px 0 0;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero.hero29 > div:first-child {
+    order: 2;
+    padding: 20px 0 0;
+  }
+
+  .hero.hero29 > div:last-child {
+    order: 1;
+    padding: 28px 0 0;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero.hero29 h2,
+  .hero.hero29 h1 {
+    font-size: 1.2rem;
+  }
+
+  .hero.hero29::before {
+    width: 100%;
+    height: 48%;
+    right: 0;
+    left: 0;
   }
 }
