@@ -1,6 +1,3 @@
-/* Disable no-descending-specificity globally */
-/* stylelint-disable no-descending-specificity */
-
 .hero-container .hero-wrapper {
   max-width: unset;
   padding: 0;
@@ -451,4 +448,118 @@
   background: radial-gradient(ellipse at 80% 85%, rgb(183 228 204 / 22%) 55%, rgb(255 255 255 / 0%) 90%);
   pointer-events: none;
   z-index: 1;
+}
+
+
+.hero.hero34 {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: flex-start;
+  background: linear-gradient(108deg, #ffe5b4 0%, #ffd6b0 100%);
+  border-radius: 16px;
+  width: 100%;
+  min-height: 180px;
+  padding: 0;
+  box-shadow: 0 2px 18px 0 rgba(0,0,0,0.02);
+  overflow: hidden;
+}
+
+/* Top-level children: columns side by side */
+.hero.hero34 > div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  min-width: 0;
+  flex: 1 1 0;
+  padding: 0;
+}
+
+/* Left (image) column */
+.hero.hero34 > div:first-child {
+  flex: 0 0 140px;
+  min-width: 110px;
+  max-width: 190px;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 32px;
+  padding-right: 8px;
+  padding-top: 28px;
+  padding-bottom: 28px;
+  box-sizing: border-box;
+}
+
+.hero.hero34 > div:first-child > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+/* Illustration (picture/img) */
+.hero.hero34 picture,
+.hero.hero34 img {
+  display: block;
+  width: 105px;
+  height: 105px;
+  max-width: 130px;
+  max-height: 130px;
+  object-fit: contain;
+  margin: 0 auto;
+}
+
+/* Right (text) column */
+.hero.hero34 > div:last-child {
+  flex: 1 1 0;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 28px 36px 28px 8px;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.hero.hero34 > div:last-child > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+  width: 100%;
+  min-width: 0;
+}
+
+/* Responsive: stack vertically */
+@media (max-width: 700px) {
+  .hero.hero34 {
+    flex-direction: column;
+    border-radius: 10px;
+  }
+  .hero.hero34 > div {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    min-width: 0;
+    padding: 0;
+  }
+  .hero.hero34 > div:first-child {
+    padding: 18px 0 0 0;
+    min-width: 0;
+    max-width: none;
+    justify-content: center;
+  }
+  .hero.hero34 picture,
+  .hero.hero34 img {
+    width: 70px;
+    height: 70px;
+    max-width: 88px;
+    max-height: 88px;
+  }
+  .hero.hero34 > div:last-child {
+    padding: 18px 8px 24px 8px;
+    width: 100%;
+    min-width: 0;
+  }
+  .hero.hero34 > div:last-child > div {
+    gap: 10px;
+  }
 }
