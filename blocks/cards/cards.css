@@ -334,13 +334,9 @@
 .cards.cards11 ul > li:hover {
   box-shadow: 0 6px 40px 0 rgba(0,0,0,0.11);
 }
-
-/* Alternate image position */
 .cards.cards11 ul > li:nth-child(even) {
   flex-direction: row-reverse;
 }
-
-/* Card image styles */
 .cards.cards11 .cards-card-image {
   width: 50%;
   min-width: 0;
@@ -362,8 +358,6 @@
   min-height: 180px;
   max-height: 410px;
 }
-
-/* Rounded corners by side */
 .cards.cards11 ul > li:not(:nth-child(even)) .cards-card-image img,
 .cards.cards11 ul > li:not(:nth-child(even)) .cards-card-image picture {
   border-radius: 26px 0 0 26px;
@@ -372,8 +366,6 @@
 .cards.cards11 ul > li:nth-child(even) .cards-card-image picture {
   border-radius: 0 26px 26px 0;
 }
-
-/* Card Content */
 .cards.cards11 .cards-card-body {
   width: 50%;
   min-width: 0;
@@ -395,8 +387,6 @@
   align-items: flex-end;
   padding: 18px 26px 22px 38px;
 }
-
-/* Card Title */
 .cards.cards11 .cards-card-body p:first-child strong {
   font-weight: 600;
   font-size: 1.19rem;
@@ -406,8 +396,6 @@
   display: inline-block;
   letter-spacing: 0.01em;
 }
-
-/* Card Description */
 .cards.cards11 .cards-card-body p:nth-child(2) {
   color: #444;
   font-size: 1.04rem;
@@ -415,15 +403,11 @@
   margin: 0 0 0 0;
   max-width: 100%;
 }
-
-/* Fallback for generic description paragraph */
 .cards.cards11 .cards-card-body p:not(:first-child):not(.button-container) {
   font-size: 1.04rem;
   line-height: 1.72;
   color: #444;
 }
-
-/* CTA container at bottom */
 .cards.cards11 .button-container {
   margin-top: 16px;
   width: 100%;
@@ -436,8 +420,6 @@
   display: flex;
   justify-content: flex-end;
 }
-
-/* CTA link styles */
 .cards.cards11 .button-container .button {
   background: none;
   color: #45c486;
@@ -461,8 +443,6 @@
   color: #22895e;
   text-decoration: underline;
 }
-
-/* Responsive Design */
 @media (max-width: 1200px) {
   .cards.cards11 ul {
     grid-template-columns: repeat(2, 1fr);
@@ -506,4 +486,219 @@
   list-style: none;
   margin: 0 auto;
   padding: 0;
+}
+
+
+.cards.cards12 {
+  background: #f7f9fa;
+  padding: 32px 0;
+}
+
+.cards.cards12 > ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(328px, 1fr));
+  gap: 36px;
+  justify-items: center;
+  max-width: 1128px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.cards.cards12 > ul > li {
+  background: #fff;
+  border-radius: 22px;
+  box-shadow: 0 4px 22px rgba(46,62,72,0.10);
+  border: none;
+  padding: 23px 20px 16px 20px;
+  min-width: 0;
+  max-width: 356px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  min-height: 0;
+}
+
+/* Card body (for spacing control) */
+.cards.cards12 .cards-card-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 auto;
+  min-height: 0;
+  gap: 0;
+}
+
+/* Card Title */
+.cards.cards12 .cards-card-body > p:first-child strong {
+  color: #27b36a;
+  font-size: 17px;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0;
+  text-align: left;
+  letter-spacing: 0.01em;
+  line-height: 1.16;
+  position: relative;
+}
+
+/* Divider under title, with more breathing room */
+.cards.cards12 .cards-card-body > p:first-child strong::after {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: #e5e5e5;
+  border-radius: 1px;
+  margin-top: 8px;
+  margin-bottom: 12px;
+  position: relative;
+  left: 0;
+  content: "";
+}
+
+/* Features: tight and consistent */
+.cards.cards12 .cards-card-body > p:not(:first-child):not(.button-container):not(:last-child):not(:has(a)):not(:has(.button)) {
+  color: #232323;
+  font-size: 15px;
+  font-family: Arial, Helvetica, Verdana, 'Microsoft JhengHei', PingFangTC, sans-serif;
+  margin: 0.07em 0;
+  font-weight: 400;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 6px;
+  padding-left: 0;
+  min-height: 22px;
+}
+
+/* Remove bold from features */
+.cards.cards12 .cards-card-body > p:not(:first-child):not(.button-container):not(:last-child):not(:has(a)):not(:has(.button)) strong {
+  font-weight: 400;
+  color: inherit;
+}
+
+/* Smaller, less saturated green bullet */
+.cards.cards12 .cards-card-body > p:not(:first-child):not(.button-container):not(:last-child):not(:has(a)):not(:has(.button))::before {
+  width: 9px;
+  height: 9px;
+  background: linear-gradient(135deg, #61d2b4 0%, #b8f3e0 100%);
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-right: 6px;
+  margin-left: 0;
+  align-self: center;
+  display: inline-block;
+  content: "";
+}
+
+/* Remove bullet/padding from title, button, info */
+.cards.cards12 .cards-card-body > p:first-child,
+.cards.cards12 .cards-card-body > p.button-container,
+.cards.cards12 .cards-card-body > p:last-child,
+.cards.cards12 .cards-card-body > p:has(a.button),
+.cards.cards12 .cards-card-body > p:has(.button) {
+  padding-left: 0;
+  display: block;
+  min-height: unset;
+  margin: 0;
+}
+
+/* Info row: subtle, small text and gray dot, tight to features and button */
+.cards.cards12 .cards-card-body > p:has(a[title*="注意事項"]) {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 3px;
+  font-size: 11px;
+  color: #bbc5c6;
+  margin: 5px 0 2px 0;
+  padding-left: 0;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+/* Info row dot: smaller, lighter */
+.cards.cards12 .cards-card-body > p:has(a[title*="注意事項"])::before {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  background: #eff2f2;
+  border-radius: 50%;
+  margin-right: 4px;
+  margin-left: 0;
+  flex-shrink: 0;
+  align-self: center;
+  content: "";
+}
+
+/* Info link: light blue-gray, smaller */
+.cards.cards12 .cards-card-body > p:has(a[title*="注意事項"]) a {
+  color: #8db3ce;
+  font-size: 11px;
+  text-decoration: underline;
+  margin-left: 1px;
+}
+
+/* Hide any extra icons/images/links except intended label/link */
+.cards.cards12 .cards-card-body > p:has(a[title*="注意事項"]) img,
+.cards.cards12 .cards-card-body > p:has(a[title*="注意事項"]) picture,
+.cards.cards12 .cards-card-body > p:has(a[title*="注意事項"]) a:not([title*="注意事項"]) {
+  display: none;
+}
+.cards.cards12 .cards-card-body > p:has(picture),
+.cards.cards12 .cards-card-body > p:has(img) {
+  display: none;
+}
+
+/* Outlined button styles, tighter vertical grouping */
+.cards.cards12 .cards-card-body .button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2px;
+  margin-bottom: 0;
+}
+
+.cards.cards12 .cards-card-body .button,
+.cards.cards12 .cards-card-body a.button {
+  background: #fff;
+  color: #28b266;
+  border: 2px solid #28b266;
+  border-radius: 8px;
+  padding: 7px 0;
+  width: 146px;
+  font-weight: 600;
+  font-size: 14px;
+  text-align: center;
+  box-shadow: none;
+  margin: 0 auto;
+  transition: background 0.15s, color 0.15s;
+  line-height: 1.16;
+  letter-spacing: 0.01em;
+  display: block;
+}
+
+.cards.cards12 .cards-card-body .button:hover,
+.cards.cards12 .cards-card-body a.button:hover {
+  background: #f4f8f6;
+  color: #228654;
+}
+
+@media (max-width: 900px) {
+  .cards.cards12 > ul {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    max-width: 100%;
+  }
+  .cards.cards12 > ul > li {
+    max-width: 100%;
+    min-width: 0;
+    padding: 10px 3vw 10px 3vw;
+  }
+  .cards.cards12 .cards-card-body .button,
+  .cards.cards12 .cards-card-body a.button {
+    width: 100%;
+    min-width: 0;
+  }
 }
