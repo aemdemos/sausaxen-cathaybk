@@ -1,6 +1,3 @@
-/* Disable no-descending-specificity globally */
-/* stylelint-disable no-descending-specificity */
-
 .tabs .tabs-list {
   display: flex;
   gap: 0.5ch;
@@ -275,13 +272,9 @@
   width: 100%;
   min-height: 1px;
 }
-
-/* Hide all children for a blank appearance */
 .tabs.tabs24 > * {
   display: none;
 }
-
-/* Remove all decoration, spacing, and color from descendants */
 .tabs.tabs24 * {
   background: transparent;
   border: none;
@@ -289,4 +282,154 @@
   margin: 0;
   padding: 0;
   color: transparent;
+}
+
+
+.tabs.tabs25 {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  min-height: 56px;
+  padding: 0 32px;
+  background: #fff;
+  border-bottom: 2px solid #EAF6F1;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+/* Perfectly horizontally and vertically center the tabs-list */
+.tabs.tabs25 .tabs-list {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 48px;
+  padding: 0;
+  margin: 0;
+  min-width: max-content;
+  background: transparent;
+  z-index: 2;
+  pointer-events: auto;
+  height: 38px; /* match button height for v-align consistency */
+}
+
+/* Proper right-corner alignment for the button container */
+.tabs.tabs25 .tabs-panel[aria-hidden="false"] {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex: 0 0 auto;
+  margin-left: auto;
+  padding: 0;
+  background: transparent;
+  border: none;
+  min-width: 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* Hide any extra/empty tabs panels */
+.tabs.tabs25 .tabs-panel {
+  display: none;
+  padding: 0;
+  background: transparent;
+  border: none;
+  margin: 0;
+}
+.tabs.tabs25 .tabs-panel[aria-hidden="false"] {
+  display: flex;
+}
+
+/* Individual tabs */
+.tabs.tabs25 .tabs-tab {
+  background: none;
+  border: none;
+  color: #A2ADB6;
+  font-size: 15px;
+  font-family: inherit;
+  font-weight: 400;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  border-radius: 0;
+  line-height: 1.2;
+  min-width: 0;
+  transition: color 0.2s, font-weight 0.2s;
+}
+
+.tabs.tabs25 .tabs-tab[aria-selected="true"] {
+  color: #032B3B;
+  font-weight: 700;
+  cursor: default;
+}
+
+.tabs.tabs25 .tabs-tab p {
+  margin: 0;
+  padding: 0;
+}
+
+/* CTA button styles (right side of nav bar) */
+.tabs.tabs25 .tabs-panel[aria-hidden="false"] .button,
+.tabs.tabs25 .tabs-panel[aria-hidden="false"] a.button {
+  background: #032B3B;
+  color: #EEF6F8;
+  border-radius: 8px;
+  padding: 0 32px;
+  height: 38px;
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+  margin: 0;
+  box-shadow: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.2;
+  white-space: nowrap;
+  min-width: 0;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.tabs.tabs25 .button-container {
+  margin: 0;
+  padding: 0;
+}
+
+/* Responsive stacking for smaller screens */
+@media (max-width: 700px) {
+  .tabs.tabs25 {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0 8px;
+    min-height: unset;
+  }
+  .tabs.tabs25 .tabs-list {
+    position: static;
+    left: unset;
+    top: unset;
+    transform: none;
+    justify-content: flex-start;
+    gap: 18px;
+    flex-wrap: wrap;
+    width: 100%;
+    min-width: 0;
+    margin-bottom: 8px;
+    height: auto;
+  }
+  .tabs.tabs25 .tabs-panel[aria-hidden="false"] {
+    justify-content: flex-start;
+    margin-top: 0;
+  }
+  .tabs.tabs25 .tabs-panel[aria-hidden="false"] .button,
+  .tabs.tabs25 .tabs-panel[aria-hidden="false"] a.button {
+    width: 100%;
+    min-width: 0;
+    justify-content: center;
+  }
 }
