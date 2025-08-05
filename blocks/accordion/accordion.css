@@ -1,4 +1,4 @@
-/* Disable no-descending-specificity globally */
+/* Disable no-descending-specificity globally for this file */
 /* stylelint-disable no-descending-specificity */
 
 .accordion details {
@@ -71,7 +71,6 @@
   box-sizing: border-box;
 }
 
-/* Faint row dividers only between items */
 .accordion.accordion15 details {
   border: none;
   border-bottom: 1px solid #ededed;
@@ -105,7 +104,6 @@
   user-select: none;
 }
 
-/* Remove marker */
 .accordion.accordion15 summary::-webkit-details-marker {
   display: none;
 }
@@ -114,7 +112,6 @@
   list-style: none;
 }
 
-/* Remove button look from label text */
 .accordion.accordion15 .button-container .button,
 .accordion.accordion15 .button-container a {
   background: none;
@@ -131,7 +128,6 @@
   display: inline;
 }
 
-/* Chevron: larger, more pronounced, but still subtle and balanced */
 .accordion.accordion15 summary.accordion-item-label > *:last-child {
   color: #bdbdbd;
   font-size: 17px;
@@ -146,7 +142,6 @@
   padding: 0;
 }
 
-/* Accordion body: compact, subtle */
 .accordion.accordion15 details .accordion-item-body {
   padding: 0 24px 12px;
   font-size: 14px;
@@ -162,7 +157,7 @@
   color: #858585;
 }
 
-@media (min-width: 900px) {
+@media (width >= 900px) {
   .accordion.accordion15 {
     max-width: 100%;
   }
@@ -175,5 +170,119 @@
 
   .accordion.accordion15 details .accordion-item-body {
     padding-bottom: 8px;
+  }
+}
+
+.accordion.accordion19 {
+  background: #fff;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0;
+}
+
+.accordion.accordion19 > details {
+  border: none;
+  border-bottom: 1px solid #f2f2f2;
+  border-radius: 0;
+  margin: 0;
+  background: #fff;
+  position: relative;
+}
+
+.accordion.accordion19 > details:last-child {
+  border-bottom: none;
+}
+
+.accordion.accordion19 > details > summary {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  color: #616161;
+  font-size: 14px;
+  font-weight: 400;
+  padding: 14px 32px 14px 14px;
+  min-height: 32px;
+  border-radius: 0;
+  cursor: pointer;
+  outline: none;
+  box-sizing: border-box;
+  text-align: left;
+  list-style: none;
+  position: relative;
+  transition: background 0.2s;
+  line-height: 1.6;
+}
+
+.accordion.accordion19 > details > summary::-webkit-details-marker,
+.accordion.accordion19 > details > summary::marker {
+  display: none;
+}
+
+.accordion.accordion19 .button-container,
+.accordion.accordion19 .button {
+  background: none;
+  color: #616161;
+  font-size: 14px;
+  font-weight: 400;
+  padding: 0;
+  margin: 0;
+  border-radius: 0;
+  box-shadow: none;
+  text-align: left;
+  display: block;
+  line-height: 1.6;
+  white-space: normal;
+  overflow-wrap: break-word;
+}
+
+.accordion.accordion19 > details > summary::after {
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 1px solid #B7E6D3;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  content: "";
+  background-image: url("data:image/svg+xml;utf8,<svg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M1 1L6 6L11 1' stroke='%231DB489' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 12px 8px;
+  box-sizing: border-box;
+}
+
+.accordion.accordion19 > details > .accordion-item-body {
+  padding: 0 14px 14px;
+  background: #fff;
+  color: #616161;
+  font-size: 14px;
+  border: none;
+  line-height: 1.6;
+}
+
+@media (width <= 600px) {
+  .accordion.accordion19 > details > summary {
+    font-size: 13px;
+    padding: 10px 24px 10px 8px;
+  }
+
+  .accordion.accordion19 > details > summary::after {
+    right: 4px;
+    width: 18px;
+    height: 18px;
+    background-size: 10px 7px;
+    border-width: 1px;
+  }
+
+  .accordion.accordion19 > details > .accordion-item-body {
+    padding: 0 8px 10px;
+    font-size: 13px;
   }
 }
