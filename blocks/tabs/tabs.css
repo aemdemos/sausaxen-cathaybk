@@ -1,6 +1,3 @@
-/* Disabled no-descending-specificity globally for the file */
-/* stylelint-disable no-descending-specificity */
-
 .tabs .tabs-list {
   display: flex;
   gap: 0.5ch;
@@ -265,52 +262,63 @@
   z-index: 1;
 }
 
-.tabs.tabs25 {
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  min-height: 56px;
-  padding: 0 32px;
+.tabs.tabs24 {
   background: #fff;
-  border-bottom: 2px solid #EAF6F1;
-  box-sizing: border-box;
+  border: none;
+  box-shadow: none;
+  margin: 0;
+  padding: 0;
   width: 100%;
+  min-height: 1px;
+}
+.tabs.tabs24 > * {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  box-shadow: none;
+}
+.tabs.tabs24 > * {
+  display: none;
 }
 
+
+.tabs.tabs25 {
+  display: flex;
+  align-items: center;
+  position: relative;
+  height: 75px;
+  min-height: 75px;
+  background: #fff;
+  border-bottom: none;
+  box-sizing: border-box;
+  padding: 0 32px;
+  width: 100%;
+  min-width: 0;
+}
+
+/* Absolutely center the tab group in the whole block */
 .tabs.tabs25 .tabs-list {
   position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  width: fit-content;
+  height: fit-content;
   display: flex;
   flex-direction: row;
-  align-items: center;
+  gap: 56px;
   justify-content: center;
-  gap: 48px;
-  padding: 0;
-  margin: 0;
-  min-width: max-content;
-  background: transparent;
-  z-index: 2;
-  pointer-events: auto;
-  height: 38px;
-}
-
-.tabs.tabs25 .tabs-panel[aria-hidden="false"] {
-  display: flex;
   align-items: center;
-  justify-content: flex-end;
-  flex: 0 0 auto;
-  margin-left: auto;
+  z-index: 2;
   padding: 0;
   background: transparent;
-  border: none;
   min-width: 0;
-  position: relative;
-  z-index: 1;
 }
 
+/* Keep only the visible panel (button) in flex flow at the right */
 .tabs.tabs25 .tabs-panel {
   display: none;
   padding: 0;
@@ -318,40 +326,28 @@
   border: none;
   margin: 0;
 }
-
-.tabs.tabs25 .tabs-tab {
-  background: none;
-  border: none;
-  color: #A2ADB6;
-  font-size: 15px;
-  font-family: inherit;
-  font-weight: 400;
-  padding: 0;
-  margin: 0;
-  cursor: pointer;
-  border-radius: 0;
-  line-height: 1.2;
+.tabs.tabs25 .tabs-panel[aria-hidden="false"] {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
   min-width: 0;
-  transition: color 0.2s, font-weight 0.2s;
+  padding: 0;
+  background: transparent;
+  border: none;
+  z-index: 3;
 }
 
-.tabs.tabs25 .tabs-tab[aria-selected="true"] {
-  color: #032B3B;
-  font-weight: 700;
-  cursor: default;
-}
-
-.tabs.tabs25 .tabs-tab p {
+/* Button style */
+.tabs.tabs25 .button-container {
   margin: 0;
   padding: 0;
 }
-
 .tabs.tabs25 .tabs-panel[aria-hidden="false"] .button,
 .tabs.tabs25 .tabs-panel[aria-hidden="false"] a.button {
-  background: #032B3B;
-  color: #EEF6F8;
+  background: #032535;
+  color: #fff;
   border-radius: 8px;
-  padding: 0 32px;
+  padding: 0 40px;
   height: 38px;
   font-size: 16px;
   font-weight: 500;
@@ -363,73 +359,66 @@
   justify-content: center;
   line-height: 1.2;
   white-space: nowrap;
-  min-width: 0;
+  min-width: 120px;
   text-decoration: none;
   transition: background 0.2s;
 }
 
-.tabs.tabs25 .button-container {
+/* Tab appearance: light gray, normal weight, no highlight */
+.tabs.tabs25 .tabs-tab,
+.tabs.tabs25 .tabs-tab[aria-selected="true"] {
+  color: rgb(162, 177, 185);
+  font-size: 15px;
+  font-weight: 400;
+  background: none;
+  border: none;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  border-radius: 0;
+  line-height: 1.2;
+  min-width: 0;
+  font-family: inherit;
+  transition: none;
+  box-shadow: none;
+  border-bottom: none;
+}
+.tabs.tabs25 .tabs-tab p {
   margin: 0;
   padding: 0;
 }
 
-@media (width <= 700px) {
+/* Responsive: stack vertically and adjust spacing on small screens */
+@media (max-width: 700px) {
   .tabs.tabs25 {
     flex-direction: column;
     align-items: stretch;
-    padding: 0 8px;
+    height: auto;
     min-height: unset;
+    padding: 0 8px;
   }
-
   .tabs.tabs25 .tabs-list {
     position: static;
-    left: unset;
-    top: unset;
-    transform: none;
+    width: 100%;
+    height: auto;
     justify-content: flex-start;
     gap: 18px;
-    flex-wrap: wrap;
-    width: 100%;
-    min-width: 0;
     margin-bottom: 8px;
-    height: auto;
+    left: unset;
+    right: unset;
+    top: unset;
+    bottom: unset;
   }
-
   .tabs.tabs25 .tabs-panel[aria-hidden="false"] {
+    margin-left: 0;
     justify-content: flex-start;
+    width: 100%;
     margin-top: 0;
   }
-
   .tabs.tabs25 .tabs-panel[aria-hidden="false"] .button,
   .tabs.tabs25 .tabs-panel[aria-hidden="false"] a.button {
     width: 100%;
     min-width: 0;
     justify-content: center;
   }
-}
-
-.tabs.tabs24 {
-  background: #fff;
-  border: none;
-  box-shadow: none;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  min-height: 1px;
-
-  /* Prevent any inherited min-height, border, or shadow from causing artifacts */
-}
-
-/* Ensure all direct children do not add spacing or outlines */
-.tabs.tabs24 > * {
-  margin: 0;
-  padding: 0;
-  border: none;
-  background: none;
-  box-shadow: none;
-}
-
-/* Hide all children visually and from layout flow (blank block) */
-.tabs.tabs24 > * {
-  display: none;
 }
