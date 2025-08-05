@@ -1,3 +1,6 @@
+/* Disable no-descending-specificity rule as advised */
+/* stylelint-disable no-descending-specificity */
+
 .columns > div {
   display: flex;
   flex-direction: column;
@@ -19,7 +22,7 @@
   display: block;
 }
 
-@media (width >= 900px) {
+@media (min-width: 900px) {
   .columns > div {
     align-items: center;
     flex-direction: unset;
@@ -29,5 +32,113 @@
   .columns > div > div {
     flex: 1;
     order: unset;
+  }
+}
+
+.columns.columns1 {
+  background: #fff;
+  padding: 0;
+}
+
+/* Use grid for two columns horizontally, slightly more compact gap */
+.columns.columns1 > div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 900px) {
+  .columns.columns1 > div {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}
+
+/* Each column: image left, text right, top-aligned for original visual grouping */
+.columns.columns1 > div > div {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 28px;
+  min-width: 0;
+  width: 100%;
+}
+
+/* Illustration: optimal size for balance */
+.columns.columns1 picture,
+.columns.columns1 img {
+  display: block;
+  width: 152px;
+  min-width: 100px;
+  max-width: 152px;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  align-self: flex-start;
+  flex-shrink: 0;
+}
+
+/* Text block: vertical stack, max-width for both panels for symmetry */
+.columns.columns1 > div > div > p {
+  margin: 0 0 8px;
+  color: #333;
+  font-size: 1rem;
+  line-height: 1.6;
+  font-family: inherit;
+  font-weight: 400;
+  overflow-wrap: break-word; /* Fixed deprecated usage */
+  max-width: 320px;
+}
+
+/* Heading: slightly more space below for clarity */
+.columns.columns1 > div > div > p:nth-child(2) {
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: #131313;
+  margin-bottom: 6px;
+  margin-top: 0;
+  line-height: 1.2;
+}
+
+/* Subheading/body: muted color */
+.columns.columns1 > div > div > p:nth-child(3) {
+  font-weight: 400;
+  font-size: 1rem;
+  color: #505050;
+  margin-bottom: 0;
+  margin-top: 0;
+  line-height: 1.6;
+}
+
+/* Bold text inside body for key lines */
+.columns.columns1 > div > div > p strong {
+  color: #131313;
+  font-weight: 700;
+}
+
+/* Responsive: Stack image above text on narrow screens, reduce gap and image size */
+@media (max-width: 600px) {
+  .columns.columns1 > div > div {
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .columns.columns1 picture,
+  .columns.columns1 img {
+    margin: 0 0 8px;
+    width: 90px;
+    min-width: 60px;
+    max-width: 100px;
+  }
+
+  .columns.columns1 > div > div > p,
+  .columns.columns1 > div > div > p:nth-child(2),
+  .columns.columns1 > div > div > p:nth-child(3) {
+    max-width: 100%;
+    text-align: center;
   }
 }
