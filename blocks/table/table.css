@@ -1,3 +1,6 @@
+/* Disable no-descending-specificity globally */
+/* stylelint-disable no-descending-specificity */
+
 .table.block {
   width: 100%;
   overflow-x: auto;
@@ -50,18 +53,183 @@
   margin-top: 0.25em;
 }
 
-/* no header variant */
 .table.block.no-header table tbody tr {
   border-top: 1px solid;
 }
 
-/* striped variant */
 .table.block.striped tbody tr:nth-child(odd) {
   background-color: var(--overlay-background-color);
 }
 
-/* bordered variant */
 .table.block.bordered table th,
 .table.block.bordered table td {
   border: 1px solid;
+}
+
+/* Improved logical grouping for two-column layout */
+.table .block > table > thead > tr > th {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 48px;
+  padding: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Alternate logical blocks between columns */
+.table .block > table > thead > tr > th > :nth-child(n+1):nth-child(-n+20),
+.table .block > table > thead > tr > th > :nth-child(n+41):nth-child(-n+65),
+.table .block > table > thead > tr > th > :nth-child(n+90):nth-child(-n+110) {
+  flex: 1 1 0;
+  width: 100%;
+  max-width: 520px;
+  align-self: flex-start;
+  order: 1;
+}
+
+.table .block > table > thead > tr > th > :nth-child(n+21):nth-child(-n+40),
+.table .block > table > thead > tr > th > :nth-child(n+66):nth-child(-n+89),
+.table .block > table > thead > tr > th > :nth-child(n+111):nth-child(-n+131) {
+  flex: 1 1 0;
+  width: 100%;
+  max-width: 520px;
+  align-self: flex-start;
+  order: 2;
+}
+
+/* Stack all blocks within column vertically */
+.table .block > table > thead > tr > th > * {
+  display: block;
+  margin-bottom: 32px;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+/* Full-width <hr> styles */
+.table .block > table > thead > tr > th > hr {
+  width: calc(100% + 48px);
+  min-width: calc(100% + 48px);
+  margin: 40px 0 32px -24px;
+  border: none;
+  height: 8px;
+  background: #f5f5f5;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 5%);
+  border-radius: 4px;
+  align-self: stretch;
+  order: 1000;
+}
+
+/* Responsive: stack all blocks vertically on mobile */
+@media (width <= 900px) {
+  .table .block > table > thead > tr > th {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .table .block > table > thead > tr > th > * {
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .table .block > table > thead > tr > th > hr {
+    width: 100%;
+    min-width: 100%;
+    margin-left: 0;
+  }
+}
+
+/* Section and table visual tweaks */
+.table .block p,
+.table .block ul,
+.table .block ol,
+.table .block table,
+.table .block hr {
+  margin-bottom: 32px;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+.table .block table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  background: #fff;
+}
+
+.table .block th,
+.table .block td {
+  border: none;
+  border-bottom: 1px solid #ececec;
+  padding: 8px 16px;
+  font-weight: 400;
+  color: #999;
+  background: none;
+}
+
+.table .block thead th {
+  font-size: 14px;
+  font-weight: 600;
+  background: #fafafa;
+  color: #888;
+  border-bottom: 2px solid #ececec;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.table .block tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.table .block img {
+  display: block;
+  margin: 0 auto 12px;
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  background: #fafafa;
+  border-radius: 8px;
+}
+
+.table .block .button {
+  background: #fff;
+  border: 1px solid #ececec;
+  color: #0070c9;
+  border-radius: 6px;
+  padding: 4px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  box-shadow: 0 1px 2px rgb(0 0 0 / 4%);
+  transition: box-shadow 0.2s, background 0.2s;
+  margin: 8px 0;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+  line-height: 1.6;
+  white-space: nowrap;
+}
+
+.table .block .button:hover,
+.table .block .button:focus {
+  background: #f5f5f5;
+  box-shadow: 0 2px 6px rgb(0 0 0 / 9%);
+  outline: none;
+}
+
+.table .block ul,
+.table .block ol {
+  color: #999;
+  font-size: 13px;
+  padding-left: 20px;
+  margin-top: 0;
+}
+
+/* Remove double margin on last elements in column */
+.table .block > table > thead > tr > th > *:last-child {
+  margin-bottom: 0;
 }
