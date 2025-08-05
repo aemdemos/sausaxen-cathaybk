@@ -1,5 +1,3 @@
-/* stylelint-disable no-descending-specificity */
-
 .columns > div {
   display: flex;
   flex-direction: column;
@@ -446,4 +444,168 @@
     font-size: 11px;
     line-height: 26px;
   }
+}
+
+
+.columns.columns17 > div {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  height: 220px;
+  max-height: 220px;
+  min-height: 200px;
+  gap: 20px;
+  padding: 0 0 0 16px;
+  background: #fff;
+  box-sizing: border-box;
+}
+
+@media (max-width: 900px) {
+  .columns.columns17 > div {
+    flex-direction: column;
+    align-items: stretch;
+    height: auto;
+    min-height: unset;
+    max-height: unset;
+    gap: 16px;
+    padding-left: 0;
+  }
+}
+
+/* Image Column */
+.columns.columns17 .columns-img-col {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 170px;
+  min-width: 140px;
+  max-width: 200px;
+  height: 100%;
+  padding-left: 0;
+  box-sizing: border-box;
+}
+
+@media (max-width: 900px) {
+  .columns.columns17 .columns-img-col {
+    width: 100%;
+    min-width: unset;
+    max-width: 100%;
+    padding-top: 10px;
+    justify-content: center;
+  }
+}
+
+.columns.columns17 .columns-img-col > picture,
+.columns.columns17 .columns-img-col > img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  margin-top: 0;
+}
+
+/* Right Content Column */
+.columns.columns17 > div > div:not(.columns-img-col) {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 5px;
+  padding: 0 0 0 16px;
+  height: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+@media (max-width: 900px) {
+  .columns.columns17 > div > div:not(.columns-img-col) {
+    padding: 0 7vw 20px 7vw;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+  }
+}
+
+/* Hide extra content in right column */
+.columns.columns17 > div > div:not(.columns-img-col) ol,
+.columns.columns17 > div > div:not(.columns-img-col) ul,
+.columns.columns17 > div > div:not(.columns-img-col) li,
+.columns.columns17 > div > div:not(.columns-img-col) picture:not(:first-child),
+.columns.columns17 > div > div:not(.columns-img-col) > p:not(:first-child):not(:nth-child(2)):not(:nth-child(3)):not(:nth-child(4)):not(.button-container) {
+  display: none;
+}
+
+/* Orange label */
+.columns.columns17 > div > div:not(.columns-img-col) > p:first-child {
+  display: inline-block;
+  background: #FFA500;
+  color: #fff;
+  font-size: 13px;
+  font-weight: bold;
+  border-radius: 4px;
+  padding: 2px 10px;
+  margin: 0 0 1px 0;
+  letter-spacing: 0.5px;
+  line-height: 1.5;
+}
+
+/* Heading/bold title */
+.columns.columns17 > div > div:not(.columns-img-col) > p:nth-child(2) {
+  font-size: 1.28rem;
+  font-weight: 800;
+  color: #222;
+  margin: 0 0 0 0;
+  line-height: 1.3;
+}
+
+/* Short description */
+.columns.columns17 > div > div:not(.columns-img-col) > p:nth-child(3) {
+  font-size: 1rem;
+  color: #828282;
+  margin: 0 0 0 0;
+  line-height: 1.45;
+}
+
+/* Info row with icon/text */
+.columns.columns17 > div > div:not(.columns-img-col) > p:nth-child(4) {
+  font-size: 0.98rem;
+  color: #828282;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 4px 0;
+  line-height: 1.5;
+}
+
+/* CTA Button style */
+.columns.columns17 .button-container {
+  margin: 0;
+  padding: 0;
+}
+.columns.columns17 .button-container .button {
+  background-color: #006737;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 1.13rem;
+  font-weight: 700;
+  padding: 10px 32px;
+  min-width: 200px;
+  border: none;
+  box-shadow: none;
+  transition: background 0.2s;
+  margin: 4px 0 0 0;
+  display: inline-block;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+.columns.columns17 .button-container .button:hover {
+  background-color: #144C29;
+}
+
+/* Remove unwanted spacing for compactness */
+.columns.columns17 > div > div:not(.columns-img-col) > * {
+  margin-left: 0;
+  margin-right: 0;
 }
