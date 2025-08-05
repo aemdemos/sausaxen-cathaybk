@@ -1,5 +1,4 @@
-/* Fixed CSS Code */
-/* Disabled no-descending-specificity globally */
+/* Disable no-descending-specificity globally */
 /* stylelint-disable no-descending-specificity */
 
 .accordion details {
@@ -288,5 +287,107 @@
     background-size: 10px 10px;
     margin-left: 10px;
     border-width: 1px;
+  }
+}
+
+.accordion.accordion22 {
+  width: 100%;
+  max-width: 1020px;
+  margin: 0 auto;
+  background: #fff;
+  box-sizing: border-box;
+}
+
+.accordion.accordion22 .accordion-item {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+.accordion.accordion22 .accordion-item-label {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 30px;
+  height: 30px;
+  padding: 0 10px;
+  border: none;
+  border-bottom: 1px solid #e2e2e2;
+  background: #fff;
+  font-size: 14px;
+  font-weight: 400;
+  color: #c1c1c1;
+  list-style: none;
+  box-sizing: border-box;
+  position: relative;
+  appearance: none;
+  background-repeat: no-repeat;
+
+  /* Make the plus icon larger, bolder, and closer to the right edge */
+  background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' xmlns='http://www.w3.org/2000/svg'%3E%3Cg stroke='%23c1c1c1' stroke-width='2.5' stroke-linecap='round'%3E%3Cline x1='12' y1='6' x2='12' y2='18'/%3E%3Cline x1='6' y1='12' x2='18' y2='12'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 24px 24px;
+  background-position: right 2px center;
+}
+
+.accordion.accordion22 .accordion-item[open] > .accordion-item-label {
+  background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' xmlns='http://www.w3.org/2000/svg'%3E%3Cline x1='6' y1='12' x2='18' y2='12' stroke='%23c1c1c1' stroke-width='2.5' stroke-linecap='round'/%3E%3C/svg%3E");
+}
+
+.accordion.accordion22 .accordion-item:last-child .accordion-item-label {
+  border-bottom: none;
+}
+
+.accordion.accordion22 .accordion-item-label::-webkit-details-marker,
+.accordion.accordion22 .accordion-item-label::marker {
+  display: none;
+}
+
+.accordion.accordion22 .accordion-item-label {
+  list-style: none;
+}
+
+/* Button should look like plain text */
+.accordion.accordion22 .accordion-item-label .button {
+  background: none;
+  color: #c1c1c1;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+  font-weight: 400;
+  text-align: left;
+  min-width: unset;
+  min-height: unset;
+  box-shadow: none;
+  display: inline;
+  line-height: 1.25;
+  cursor: pointer;
+  white-space: normal;
+}
+
+.accordion.accordion22 .accordion-item-label .button-container {
+  margin: 0;
+  padding: 0;
+}
+
+/* Accordion body: compact inner padding */
+.accordion.accordion22 .accordion-item-body {
+  padding: 0 10px;
+  margin: 0;
+  font-size: 14px;
+  color: #505050;
+}
+
+@media (width <= 900px) {
+  .accordion.accordion22 {
+    max-width: 100%;
+  }
+
+  .accordion.accordion22 .accordion-item-label,
+  .accordion.accordion22 .accordion-item-body {
+    padding-left: 4px;
+    padding-right: 4px;
   }
 }
