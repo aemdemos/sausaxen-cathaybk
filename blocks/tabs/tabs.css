@@ -1,4 +1,4 @@
-/* Disable the no-descending-specificity rule */
+/* Disable no-descending-specificity globally */
 /* stylelint-disable no-descending-specificity */
 
 .tabs .tabs-list {
@@ -72,10 +72,9 @@
   flex-direction: column;
   align-items: stretch;
   overflow: visible;
-  min-height: unset; /* Moved here to remove duplicate selector */
+  min-height: unset;
 }
 
-/* Restore and float the tab list above the card */
 .tabs.tabs6 .tabs-list {
   display: flex;
   justify-content: center;
@@ -91,7 +90,6 @@
   background: transparent;
 }
 
-/* Style tab buttons */
 .tabs.tabs6 .tabs-list button {
   width: 220px;
   height: 56px;
@@ -134,7 +132,6 @@
   }
 }
 
-/* Main content panel: remove min-height and excessive padding, center content vertically */
 .tabs.tabs6 .tabs-panel {
   border: none;
   background: transparent;
@@ -145,7 +142,6 @@
   display: block;
 }
 
-/* Main feature: side-by-side layout for first content row only */
 .tabs.tabs6 .tabs-panel[aria-hidden="false"] > div {
   display: flex;
   flex-direction: row;
@@ -157,7 +153,6 @@
   box-sizing: border-box;
 }
 
-/* Responsive stacking on mobile */
 @media (width <= 900px) {
   .tabs.tabs6 .tabs-panel[aria-hidden="false"] > div {
     flex-direction: column;
@@ -173,7 +168,6 @@
   }
 }
 
-/* Left column: Illustration */
 .tabs.tabs6 .tabs-panel[aria-hidden="false"] > div > p:first-child {
   flex: 0 0 330px;
   max-width: 330px;
@@ -197,7 +191,6 @@
   display: block;
 }
 
-/* Right column: all other direct siblings (text block) */
 .tabs.tabs6 .tabs-panel[aria-hidden="false"] > div > *:not(:first-child) {
   flex: 1 1 0;
   min-width: 0;
@@ -206,7 +199,6 @@
   display: block;
 }
 
-/* Typography for main block */
 .tabs.tabs6 .tabs-panel[aria-hidden="false"] > div > p:nth-child(2) {
   font-size: 2rem;
   font-weight: bold;
@@ -232,14 +224,12 @@
   margin-bottom: 0;
 }
 
-/* Steps/lists: no extra gap at top after main flex row */
 .tabs.tabs6 .tabs-panel[aria-hidden="false"] > div + ol,
 .tabs.tabs6 .tabs-panel[aria-hidden="false"] > div + ul,
 .tabs.tabs6 .tabs-panel[aria-hidden="false"] > div + p {
   margin-top: 0.5em;
 }
 
-/* Steps/lists appearance */
 .tabs.tabs6 .tabs-panel[aria-hidden="false"] > div > ol,
 .tabs.tabs6 .tabs-panel[aria-hidden="false"] > div > ul {
   margin-left: 18px;
@@ -265,7 +255,6 @@
   margin-top: 2px;
 }
 
-/* Bottom accent bar */
 .tabs.tabs6::after {
   display: block;
   position: absolute;
@@ -274,4 +263,30 @@
   border-radius: 0 0 24px 24px;
   background: linear-gradient(90deg, #00c3a3, #38a1db);
   z-index: 1;
+}
+
+.tabs.tabs24 {
+  background: #fff;
+  border: none;
+  box-shadow: none;
+  margin: 0;
+  padding: 0;
+  display: block;
+  width: 100%;
+  min-height: 1px;
+}
+
+/* Hide all children for a blank appearance */
+.tabs.tabs24 > * {
+  display: none;
+}
+
+/* Remove all decoration, spacing, and color from descendants */
+.tabs.tabs24 * {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  margin: 0;
+  padding: 0;
+  color: transparent;
 }
