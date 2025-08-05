@@ -472,8 +472,6 @@
     padding-left: 0;
   }
 }
-
-/* Image Column */
 .columns.columns17 .columns-img-col {
   display: flex;
   align-items: flex-start;
@@ -505,8 +503,6 @@
   object-fit: contain;
   margin-top: 0;
 }
-
-/* Right Content Column */
 .columns.columns17 > div > div:not(.columns-img-col) {
   display: flex;
   flex-direction: column;
@@ -527,8 +523,6 @@
     gap: 8px;
   }
 }
-
-/* Hide extra content in right column */
 .columns.columns17 > div > div:not(.columns-img-col) ol,
 .columns.columns17 > div > div:not(.columns-img-col) ul,
 .columns.columns17 > div > div:not(.columns-img-col) li,
@@ -536,8 +530,6 @@
 .columns.columns17 > div > div:not(.columns-img-col) > p:not(:first-child):not(:nth-child(2)):not(:nth-child(3)):not(:nth-child(4)):not(.button-container) {
   display: none;
 }
-
-/* Orange label */
 .columns.columns17 > div > div:not(.columns-img-col) > p:first-child {
   display: inline-block;
   background: #FFA500;
@@ -550,8 +542,6 @@
   letter-spacing: 0.5px;
   line-height: 1.5;
 }
-
-/* Heading/bold title */
 .columns.columns17 > div > div:not(.columns-img-col) > p:nth-child(2) {
   font-size: 1.28rem;
   font-weight: 800;
@@ -559,16 +549,12 @@
   margin: 0 0 0 0;
   line-height: 1.3;
 }
-
-/* Short description */
 .columns.columns17 > div > div:not(.columns-img-col) > p:nth-child(3) {
   font-size: 1rem;
   color: #828282;
   margin: 0 0 0 0;
   line-height: 1.45;
 }
-
-/* Info row with icon/text */
 .columns.columns17 > div > div:not(.columns-img-col) > p:nth-child(4) {
   font-size: 0.98rem;
   color: #828282;
@@ -578,8 +564,6 @@
   margin: 0 0 4px 0;
   line-height: 1.5;
 }
-
-/* CTA Button style */
 .columns.columns17 .button-container {
   margin: 0;
   padding: 0;
@@ -603,9 +587,160 @@
 .columns.columns17 .button-container .button:hover {
   background-color: #144C29;
 }
-
-/* Remove unwanted spacing for compactness */
 .columns.columns17 > div > div:not(.columns-img-col) > * {
   margin-left: 0;
   margin-right: 0;
+}
+
+
+.columns.columns18 {
+  background: #fff;
+  padding: 0;
+}
+
+/* 3-column grid */
+.columns.columns18 > div {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  align-items: start;
+  margin: 0;
+  padding: 0;
+}
+
+@media (max-width: 900px) {
+  .columns.columns18 > div {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+/* Card: reduce left/right/top/bottom padding for compactness */
+.columns.columns18 > div > div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  box-sizing: border-box;
+  min-width: 0;
+  padding: 10px 16px 10px 10px;
+  background: #fff;
+  width: 100%;
+}
+
+/* Icon row: tighter to top/right, consistent for all columns */
+.columns.columns18 > div > div > p:first-child {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-start;
+  margin: 0 0 2px 0;
+  padding: 0;
+  min-height: 36px;
+}
+
+/* Icon size and ensure it's within card boundary */
+.columns.columns18 > div > div > p:first-child picture,
+.columns.columns18 > div > div > p:first-child img {
+  width: 34px;
+  height: 34px;
+  display: block;
+  margin-top: 0;
+  margin-right: 0;
+}
+
+/* Text and headings: left-aligned, less bottom margin */
+.columns.columns18 > div > div > p:not(:first-child) {
+  text-align: left;
+  color: #505050;
+  font-size: 16px;
+  margin: 0 0 2px 0;
+  line-height: 1.5;
+  width: 100%;
+  letter-spacing: 0.01em;
+  font-family: var(--body-font-family);
+  font-weight: 400;
+}
+
+/* Action links: keep chevron on same line, tighter vertical grouping */
+.columns.columns18 > div > div p a {
+  display: inline-flex;
+  align-items: center;
+  color: #00a862;
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+  line-height: 1.5;
+  white-space: nowrap;
+  margin: 0 12px 0 0;
+  border-radius: 2px;
+  transition: color 0.2s;
+  vertical-align: middle;
+  gap: 4px;
+}
+
+.columns.columns18 > div > div p a:hover {
+  color: #00894d;
+  text-decoration: underline;
+}
+
+/* Chevron next to link: small and crisp */
+.columns.columns18 > div > div p a img,
+.columns.columns18 > div > div p a picture {
+  width: 16px;
+  height: 16px;
+  margin-left: 2px;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+/* Remove extra vertical gap between links */
+.columns.columns18 > div > div p {
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  display: block;
+}
+
+/* Tighter grouping between links */
+.columns.columns18 > div > div p a:not(:last-child) {
+  margin-bottom: 1px;
+}
+
+/* No extra margin on last p */
+.columns.columns18 > div > div > p:last-child {
+  margin-bottom: 0;
+}
+
+/* Vertical divider: starts tighter under icon, ends close to bottom */
+.columns.columns18 > div > div:not(:last-child)::after {
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 44px;
+  bottom: 10px;
+  width: 1px;
+  background: #ececec;
+  z-index: 1;
+  /* no content property */
+}
+
+@media (max-width: 900px) {
+  .columns.columns18 > div > div {
+    padding: 10px 0 10px 0;
+    border-bottom: 1px solid #ececec;
+  }
+  .columns.columns18 > div > div:last-child {
+    border-bottom: none;
+  }
+  .columns.columns18 > div > div:not(:last-child)::after {
+    display: none;
+  }
+}
+
+/* Columns stretch to fill grid cell */
+.columns.columns18 > div > div {
+  width: 100%;
+  box-sizing: border-box;
 }
