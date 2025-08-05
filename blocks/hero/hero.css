@@ -1,5 +1,4 @@
-/* Updated CSS code to resolve validation errors */
-/* Added Stylelint rule disable comment for descending specificity */
+/* Disable no-descending-specificity globally */
 /* stylelint-disable no-descending-specificity */
 
 .hero-container .hero-wrapper {
@@ -143,7 +142,7 @@
   font-weight: 700;
   border: none;
   text-align: center;
-  box-shadow: 0 2px 8px rgb(6 47 66 / 8%);
+  box-shadow: 0 2px 8px rgb(6 47 66 / 7%);
   transition: background 0.18s;
   margin: 0;
 }
@@ -181,8 +180,8 @@
     gap: 6px;
   }
 
-  .hero.hero9 > div:last-child > div > p > img,
-  .hero.hero9 > div:last-child > div > p > picture img {
+  .hero.hero9 > div:last-child > div > p > picture img,
+  .hero.hero9 > div:last-child > div > p > img {
     width: 56px;
     height: 56px;
     margin-bottom: 8px;
@@ -274,171 +273,182 @@
   }
 }
 
-
 .hero.hero29 {
   display: flex;
   flex-direction: row;
   align-items: center;
-  min-height: 330px;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 32px;
-  background: linear-gradient(180deg, #fff 0%, #e7f5e5 85%);
+  justify-content: center;
+  min-height: 540px;
+  width: 100%;
+  background: linear-gradient(180deg, #fff 0%, #e0f7ea 100%);
   position: relative;
   overflow: hidden;
+  padding: 0;
+  box-sizing: border-box;
+  gap: 0;
 }
 
-/* More subtle and faded accent wave, does NOT overpower image */
-.hero.hero29::before {
-  display: block;
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  width: 67%;
-  height: 90%;
-  background: radial-gradient(ellipse at 80% 85%, rgb(183 228 204 / 22%) 55%, rgb(255 255 255 / 0%) 90%);
-  z-index: 0;
-  pointer-events: none;
-  content: "";
-}
-
-/* ------ COLUMN LAYOUT ------ */
-
-/* Text block on the left */
 .hero.hero29 > div:last-child {
   order: 1;
-  flex: 1 1 40%;
+  flex: 1 1 0%;
+  max-width: 470px;
+  min-width: 260px;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  padding: 44px 0 44px 28px;
-  max-width: 490px;
-  color: #232323;
+  padding: 0 0 0 6vw;
+  margin: 0;
   z-index: 2;
-  text-align: left;
 }
 
-/* Illustration/image column (right) */
-.hero.hero29 > div:first-child {
-  order: 2;
-  flex: 1 1 60%;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  min-width: 0;
-  min-height: 230px;
-  max-height: 330px;
-  padding-left: 24px;
-  z-index: 1;
-  position: relative;
-}
-
-/* Display the illustration clearly and above the accent */
-.hero.hero29 > div:first-child picture,
-.hero.hero29 > div:first-child img {
-  display: block;
-  max-width: 92%;
-  max-height: 295px;
-  width: auto;
-  height: auto;
-  min-width: 210px;
-  min-height: 140px;
-  object-fit: contain;
-  margin: 0 auto;
-  z-index: 2;
-  position: relative;
-  box-shadow: none;
-  background: none;
-  opacity: 1;
-}
-
-/* --- TEXT STYLES --- */
 .hero.hero29 h2,
 .hero.hero29 h1 {
-  color: #232323;
-  font-size: 2rem;
-  font-weight: 700;
-  margin: 0 0 16px;
-  line-height: 1.25;
-  letter-spacing: 0.04em;
+  font-family: Arial, Helvetica, Verdana, Microsoft JhengHei, PingFangTC, sans-serif;
+  font-weight: 300;
+  color: #333;
+  font-size: 1.5rem;
+  line-height: 1.22;
+  margin: 0 0 24px;
+  letter-spacing: 0.01em;
 }
 
 .hero.hero29 p {
-  color: #353535;
+  color: #444;
   font-size: 1rem;
+  font-weight: 300;
   margin: 0 0 18px;
   line-height: 1.7;
+  background: none;
+  max-width: 95%;
 }
 
-.hero.hero29 p:last-child {
-  margin-bottom: 0;
-  margin-top: 18px;
+.hero.hero29 > div:last-child picture:first-child,
+.hero.hero29 > div:last-child img:first-child {
+  display: block;
+  margin-bottom: 18px;
+  margin-top: 0;
+  align-self: flex-start;
+  width: 1.1em;
+  height: 1.1em;
+  opacity: 0.7;
+  order: -1;
 }
 
-/* Action row: icon + link (if present) spacing */
-.hero.hero29 p a picture,
-.hero.hero29 p a img {
-  vertical-align: middle;
-  margin-right: 0.45em;
-  width: 1.25em;
-  height: 1.25em;
-  display: inline-block;
-}
-
-.hero.hero29 p a {
-  font-size: 1rem;
+.hero.hero29 a:any-link {
   color: #329c6e;
 }
 
-/* Remove blue link and subheading if present */
-.hero.hero29 .top-link,
-.hero.hero29 .subheading {
-  display: none;
+.hero.hero29 a:hover {
+  color: #267e54;
+  text-decoration: underline;
 }
 
-/* --- Responsive adjustments --- */
+.hero.hero29 > div:first-child {
+  order: 2;
+  flex: 1 1 0%;
+  max-width: 900px;
+  min-width: 320px;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 6vw 0 2vw;
+  margin: 0;
+  z-index: 2;
+}
+
+.hero.hero29 > div:first-child picture,
+.hero.hero29 > div:first-child img {
+  display: block;
+  width: 100%;
+  max-width: 590px;
+  min-width: 320px;
+  height: 390px;
+  min-height: 220px;
+  object-fit: contain;
+  margin: 0 0 0 auto;
+  z-index: 2;
+  background: none;
+  box-shadow: none;
+  border: none;
+  opacity: 1;
+  position: relative;
+}
+
+@media (width <= 1200px) {
+  .hero.hero29 > div:last-child {
+    padding-left: 3vw;
+    max-width: 48vw;
+    min-width: 170px;
+  }
+
+  .hero.hero29 > div:first-child {
+    padding-right: 3vw;
+    max-width: 56vw;
+    min-width: 110px;
+  }
+
+  .hero.hero29 > div:first-child picture,
+  .hero.hero29 > div:first-child img {
+    max-width: 410px;
+    height: 250px;
+    min-width: 110px;
+  }
+}
+
 @media (width <= 900px) {
   .hero.hero29 {
     flex-direction: column;
-    padding: 0 8px;
-    min-height: unset;
+    min-height: 340px;
+    padding: 0;
   }
 
   .hero.hero29 > div {
     max-width: 100%;
+    min-width: 0;
     width: 100%;
+    height: auto;
   }
 
   .hero.hero29 > div:first-child,
   .hero.hero29 > div:last-child {
-    padding: 20px 0 0;
-    justify-content: center;
+    margin: 0;
+    padding: 0;
     align-items: center;
+    justify-content: center;
     text-align: center;
-  }
-
-  .hero.hero29 > div:first-child {
-    order: 2;
-    padding: 20px 0 0;
   }
 
   .hero.hero29 > div:last-child {
-    order: 1;
-    padding: 28px 0 0;
     align-items: center;
-    text-align: center;
+    margin-bottom: 12px;
+    max-width: 94vw;
+    padding: 5vw 0 2vw;
   }
 
   .hero.hero29 h2,
   .hero.hero29 h1 {
-    font-size: 1.2rem;
+    font-size: 1.08rem;
   }
 
-  .hero.hero29::before {
-    width: 100%;
-    height: 48%;
-    right: 0;
-    left: 0;
+  .hero.hero29 > div:first-child picture,
+  .hero.hero29 > div:first-child img {
+    min-width: 90px;
+    height: 22vw;
+    max-width: 78vw;
+    margin: 0 auto;
   }
+}
+
+.hero.hero29::after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 54vw;
+  height: 60%;
+  background: radial-gradient(ellipse at 80% 85%, rgb(183 228 204 / 22%) 55%, rgb(255 255 255 / 0%) 90%);
+  pointer-events: none;
+  z-index: 1;
 }
