@@ -1,6 +1,4 @@
-/* Disable no-descending-specificity globally for this file */
 /* stylelint-disable no-descending-specificity */
-
 .cards > ul {
   list-style: none;
   margin: 0;
@@ -50,7 +48,6 @@
   min-height: 68px;
 }
 
-/* Remove any custom margin for uniform gap, but add larger space after the circle */
 .cards.cards5 > ul > li {
   margin: 0;
   padding: 0 8px;
@@ -71,7 +68,6 @@
   box-sizing: border-box;
 }
 
-/* The first item: the circle -- add extra margin after for distinct grouping */
 .cards.cards5 > ul > li:first-child {
   min-width: 44px;
   min-height: 44px;
@@ -93,12 +89,10 @@
   display: none;
 }
 
-/* Hide image area for the circle and other cards */
 .cards.cards5 > ul > li .cards-card-image {
   display: none;
 }
 
-/* Card body/text styling */
 .cards.cards5 > ul > li .cards-card-body {
   text-align: center;
   color: #bdbdbd;
@@ -116,7 +110,6 @@
   word-break: break-all;
 }
 
-/* Responsive: stack vertically on mobile */
 @media (width <= 700px) {
   .cards.cards5 {
     flex-direction: column;
@@ -144,5 +137,165 @@
 
   .cards.cards5 > ul > li:first-child {
     margin-right: 0;
+  }
+}
+
+.cards.cards10 {
+  background: #f7f7f7;
+  padding: 40px 0;
+  margin: 0;
+  box-sizing: border-box;
+  height: auto;
+}
+
+.cards.cards10 > ul {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-auto-rows: minmax(0, auto);
+  gap: 28px 32px;
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  max-width: 1200px;
+  box-sizing: border-box;
+  align-items: start;
+}
+
+.cards.cards10 > ul > li {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 6%);
+  overflow: hidden;
+  padding: 0;
+  min-height: 0;
+  height: auto;
+  align-items: stretch;
+  justify-content: flex-start;
+}
+
+.cards.cards10 .cards-card-image {
+  width: 100%;
+  height: 250px;
+  background: #ececec;
+  overflow: hidden;
+  border-radius: 20px 20px 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cards.cards10 .cards-card-image:empty {
+  display: none;
+}
+
+.cards.cards10 .cards-card-image picture,
+.cards.cards10 .cards-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px 20px 0 0;
+  display: block;
+}
+
+.cards.cards10 .cards-card-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  padding: 14px 20px 18px;
+  justify-content: flex-start;
+}
+
+.cards.cards10 > ul > li:not(:has(.cards-card-image:not(:empty))) .cards-card-body {
+  padding-top: 28px;
+}
+
+.cards.cards10 .cards-card-body p {
+  margin: 0 0 10px;
+  color: #333;
+  font-size: 1.13rem;
+  line-height: 1.7;
+  font-weight: 400;
+}
+
+.cards.cards10 .cards-card-body p:first-child strong {
+  font-size: 1.6rem;
+  color: #222;
+  font-weight: 700;
+  margin-bottom: 14px;
+  display: block;
+  line-height: 1.3;
+}
+
+.cards.cards10 .cards-card-body ol,
+.cards.cards10 .cards-card-body ul {
+  margin: 0 0 10px 22px;
+  padding-left: 18px;
+  font-size: 1.13rem;
+  color: #333;
+  line-height: 1.8;
+}
+
+.cards.cards10 .cards-card-body li {
+  margin-bottom: 3px;
+}
+
+.cards.cards10 .cards-card-body a {
+  display: block;
+  color: #00945e;
+  font-weight: bold;
+  font-size: 1.09rem;
+  align-items: center;
+  text-decoration: none;
+  transition: color 0.2s;
+  margin-top: 10px;
+  margin-bottom: 0;
+  line-height: 1.4;
+  letter-spacing: 0.01em;
+}
+
+.cards.cards10 .cards-card-body a + a {
+  margin-top: 8px;
+}
+
+.cards.cards10 .cards-card-body a picture img {
+  width: 20px;
+  height: 20px;
+  margin-left: 3px;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+@media (width <= 1100px) {
+  .cards.cards10 > ul {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (width <= 700px) {
+  .cards.cards10 > ul {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    max-width: 99vw;
+  }
+
+  .cards.cards10 {
+    padding: 12px 0;
+  }
+
+  .cards.cards10 .cards-card-body {
+    padding: 10px 10px 12px;
+  }
+
+  .cards.cards10 .cards-card-image,
+  .cards.cards10 .cards-card-image picture,
+  .cards.cards10 .cards-card-image img {
+    height: 120px;
+    border-radius: 12px 12px 0 0;
+  }
+
+  .cards.cards10 > ul > li {
+    border-radius: 12px;
   }
 }
