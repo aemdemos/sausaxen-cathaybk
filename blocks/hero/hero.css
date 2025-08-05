@@ -45,3 +45,249 @@
     padding: 40px 32px;
   }
 }
+
+.hero.hero9 {
+  background: linear-gradient(115deg, #d1f3e0 0%, #d1d8f3 100%);
+  border-radius: 32px;
+  min-height: 540px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 0;
+  box-sizing: border-box;
+  gap: 0;
+}
+
+/* Two columns: left content, right illustration */
+.hero.hero9 > div {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* --- RIGHT COLUMN (Illustration) --- */
+.hero.hero9 > div:first-child {
+  order: 2;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  min-width: 340px;
+}
+.hero.hero9 > div:first-child picture,
+.hero.hero9 > div:first-child img {
+  max-width: 420px;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+/* --- LEFT COLUMN (Content) --- */
+.hero.hero9 > div:last-child {
+  order: 1;
+  align-items: flex-start;
+  justify-content: center;
+  padding-left: 8vw;
+  padding-right: 2vw;
+  max-width: 540px;
+  min-width: 320px;
+}
+
+/* Inner vertical stack for headline, subtitle, button, icons/features */
+.hero.hero9 > div:last-child > div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+  max-width: 440px;
+  gap: 0;
+}
+
+/* Headline and subtitle */
+.hero.hero9 h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #002d62;
+  margin-bottom: 12px;
+  margin-top: 0;
+  text-align: left;
+  letter-spacing: 0.02em;
+}
+.hero.hero9 h2 {
+  font-size: 1.25rem;
+  color: #4a4a4a;
+  text-align: left;
+  font-weight: 400;
+  margin-bottom: 32px;
+  margin-top: 0;
+}
+
+/* Button stacking fix: center under subtitle */
+.hero.hero9 .button-container {
+  margin-bottom: 40px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 0;
+}
+.hero.hero9 .button {
+  background: #003366;
+  color: #fff;
+  border-radius: 12px;
+  padding: 16px 56px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+  margin: 0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+  letter-spacing: 0.03em;
+  border: none;
+  text-transform: none;
+  transition: background 0.2s;
+}
+.hero.hero9 .button:hover,
+.hero.hero9 .button:focus {
+  background: #0a1d42;
+}
+
+/* --- FEATURE ICON+LABEL ROW --- */
+/* Arrange icons+labels into a horizontal row using grid */
+@media (min-width: 900px) {
+  /* Grid for the three icon+label pairs (simulate row/pairs with nth-child) */
+  .hero.hero9 > div:last-child > div {
+    position: relative;
+    display: grid;
+    grid-template-rows: auto auto auto;
+    grid-template-columns: 1fr;
+    row-gap: 0;
+  }
+  /* Icon+label pair 1 */
+  .hero.hero9 > div:last-child > div > p:nth-child(4),
+  .hero.hero9 > div:last-child > div > p:nth-child(6),
+  .hero.hero9 > div:last-child > div > p:nth-child(8) {
+    grid-row: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 140px;
+    margin: 0 18px 0 0;
+    text-align: center;
+    margin-top: 32px;
+    float: left;
+  }
+  .hero.hero9 > div:last-child > div > p:nth-child(8) { margin-right: 0; }
+  /* Labels below icons */
+  .hero.hero9 > div:last-child > div > p:nth-child(5),
+  .hero.hero9 > div:last-child > div > p:nth-child(7),
+  .hero.hero9 > div:last-child > div > p:nth-child(9) {
+    grid-row: 4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 140px;
+    margin: 0 18px 32px 0;
+    color: #6d7c89;
+    font-size: 1rem;
+    text-align: center;
+    margin-top: 4px;
+    float: left;
+  }
+  .hero.hero9 > div:last-child > div > p:nth-child(9) { margin-right: 0; }
+  /* Clear floats after the icon row if needed */
+  .hero.hero9 > div:last-child > div:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
+
+/* Feature icon sizing */
+.hero.hero9 > div:last-child > div > p > picture img,
+.hero.hero9 > div:last-child > div > p > img {
+  width: 56px;
+  height: 56px;
+  margin-bottom: 8px;
+  object-fit: contain;
+  display: block;
+}
+
+/* General text color for feature captions */
+.hero.hero9 > div:last-child > div > p {
+  color: #6d7c89;
+  font-size: 1rem;
+  text-align: center;
+  line-height: 1.4;
+  margin-top: 0.8em;
+  margin-bottom: 0.25em;
+}
+
+/* Responsive: stack columns and features vertically on mobile */
+@media (max-width: 899px) {
+  .hero.hero9 {
+    flex-direction: column;
+    border-radius: 0;
+    padding: 28px 0;
+    min-height: unset;
+    gap: 0;
+  }
+  .hero.hero9 > div,
+  .hero.hero9 > div:last-child > div {
+    max-width: 100%;
+    width: 100%;
+  }
+  .hero.hero9 > div:first-child {
+    order: 2;
+    align-items: center;
+    margin-top: 32px;
+    min-width: 0;
+    padding-left: 0;
+  }
+  .hero.hero9 > div:last-child {
+    order: 1;
+    align-items: center;
+    padding: 0 16px;
+    min-width: 0;
+    max-width: none;
+  }
+  .hero.hero9 > div:last-child > div {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .hero.hero9 > div:last-child > div > p {
+    display: block;
+    width: 100%;
+    margin-bottom: 8px;
+    text-align: center;
+  }
+  .hero.hero9 > div:last-child > div > p > picture img,
+  .hero.hero9 > div:last-child > div > p > img {
+    width: 48px;
+    height: 48px;
+  }
+  .hero.hero9 h1,
+  .hero.hero9 h2 {
+    text-align: center;
+  }
+  .hero.hero9 .button-container {
+    justify-content: center;
+  }
+  /* Stack icons/labels vertically on mobile */
+  .hero.hero9 > div:last-child > div > p:nth-child(4),
+  .hero.hero9 > div:last-child > div > p:nth-child(6),
+  .hero.hero9 > div:last-child > div > p:nth-child(8),
+  .hero.hero9 > div:last-child > div > p:nth-child(5),
+  .hero.hero9 > div:last-child > div > p:nth-child(7),
+  .hero.hero9 > div:last-child > div > p:nth-child(9) {
+    width: 100%;
+    margin: 0;
+    float: none;
+  }
+}
