@@ -983,243 +983,6 @@
 }
 
 
-.columns.columns39 {
-  width: 100%;
-  max-width: 1280px;
-  margin: 40px auto;
-  background: #fff;
-  border-radius: 24px;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.10);
-  padding: 48px 64px;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: row;
-  gap: 56px;
-}
-
-@media (max-width: 1200px) {
-  .columns.columns39 {
-    flex-direction: column;
-    padding: 32px 8px;
-    gap: 32px;
-    max-width: 98vw;
-  }
-}
-
-.columns.columns39 > div {
-  flex: 1 1 0;
-  min-width: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  gap: 0;
-}
-.columns.columns39 > div > div:first-child {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-}
-.columns.columns39 > div > div:first-child .button-container {
-  display: flex;
-  flex-direction: row;
-  gap: 0;
-  justify-content: flex-start;
-  align-items: flex-end;
-  margin: 0 0 12px 0;
-  padding: 0;
-}
-.columns.columns39 > div > div:first-child > .button-container:nth-child(-n+2) {
-  margin-bottom: 0;
-  margin-right: 24px;
-  padding: 0;
-}
-.columns.columns39 > div > div:first-child > .button-container:nth-child(-n+2) .button {
-  background: none;
-  color: #15803d;
-  font-size: 20px;
-  font-weight: 700;
-  border-radius: 0;
-  border: none;
-  border-bottom: 4px solid transparent;
-  padding: 0 32px 12px 0;
-  margin: 0;
-  box-shadow: none;
-  transition: color .2s, border-bottom-color .2s;
-  line-height: 1;
-  min-width: 110px;
-  text-align: center;
-  outline: none;
-}
-
-.columns.columns39 > div > div:first-child > .button-container:nth-child(-n+2) .button[aria-current="true"],
-.columns.columns39 > div > div:first-child > .button-container:nth-child(-n+2) .button.active {
-  color: #15803d;
-  border-bottom: 4px solid #15803d;
-}
-
-.columns.columns39 > div > div:first-child > .button-container:nth-child(-n+2) .button:not([aria-current="true"]):not(.active) {
-  color: #888;
-  border-bottom: 4px solid transparent;
-}
-.columns.columns39 > div > div:first-child > p {
-  margin: 14px 0 0 0;
-  font-size: 16px;
-  color: #444;
-  line-height: 1.5;
-  text-align: left;
-}
-.columns.columns39 > div > div:first-child > p:first-of-type {
-  margin-top: 0;
-}
-.columns.columns39 > div > div:first-child > .button-container:not(:nth-child(-n+2)) {
-  margin-top: 22px;
-  margin-bottom: 26px;
-  justify-content: flex-start;
-  display: flex;
-}
-.columns.columns39 .button,
-.columns.columns39 a.button {
-  background: #15803d;
-  color: #fff;
-  border-radius: 8px;
-  font-size: 18px;
-  font-weight: 600;
-  border: none;
-  box-shadow: 0 2px 8px rgba(39,174,96,0.2);
-  padding: 16px 0;
-  width: 92%;
-  margin: 0 auto;
-  text-align: center;
-  transition: background .2s;
-  text-decoration: none;
-  white-space: nowrap;
-  display: block;
-}
-
-.columns.columns39 .button:hover,
-.columns.columns39 a.button:hover,
-.columns.columns39 .button:focus,
-.columns.columns39 a.button:focus {
-  background: #12632f;
-  color: #fff;
-  text-decoration: none;
-}
-.columns.columns39 > div > div:last-child {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-.columns.columns39 > div > div:last-child > p:first-child {
-  margin-top: 0;
-  margin-bottom: 2px;
-  display: flex;
-  justify-content: center;
-}
-
-.columns.columns39 > div > div:last-child > p:first-child picture,
-.columns.columns39 > div > div:last-child > p:first-child img {
-  display: block;
-  margin: 0 auto 0 auto;
-  width: 48px;
-  height: 48px;
-  object-fit: contain;
-}
-
-.columns.columns39 > div > div:last-child > p:nth-child(2) {
-  color: #888;
-  font-size: 16px;
-  margin: 0 0 2px 0;
-  text-align: center;
-}
-
-.columns.columns39 > div > div:last-child > p:nth-child(3) {
-  margin-bottom: 4px;
-}
-.columns.columns39 > div > div:last-child .info-cards-row,
-.columns.columns39 > div > div:last-child > .info-cards-row {
-  display: flex;
-  flex-direction: row;
-  gap: 12px;
-  justify-content: center;
-  width: auto;
-  margin: 4px 0 0 0;
-}
-.columns.columns39 > div > div:last-child > p:has(img[width="20"][height="20"]) {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #f7fffa;
-  border: 1.5px solid #d1fadf;
-  border-radius: 12px;
-  padding: 22px 40px;
-  min-width: 220px;
-  max-width: 270px;
-  text-align: center;
-  color: #15803d;
-  font-size: 24px;
-  margin: 0 8px 0 0;
-  gap: 12px;
-  box-shadow: 0 2px 8px rgba(39,174,96,0.04);
-  font-weight: 500;
-}
-
-.columns.columns39 > div > div:last-child > p:has(img[width="20"][height="20"]):last-child {
-  margin-right: 0;
-}
-
-.columns.columns39 > div > div:last-child > p:has(img[width="20"][height="20"]) img {
-  width: 32px;
-  height: 32px;
-}
-.columns.columns39 > div > div:last-child > p:has(img[width="20"][height="20"]) + p {
-  margin-top: 10px;
-}
-.columns.columns39 > div > div:last-child > p:first-child,
-.columns.columns39 > div > div:last-child > p:nth-child(2),
-.columns.columns39 > div > div:last-child > p:has(img[width="20"][height="20"]) {
-  margin-bottom: 2px;
-}
-.columns.columns39 > div > div:last-child > p {
-  margin-top: 8px;
-  margin-bottom: 2px;
-  line-height: 1.5;
-}
-.columns.columns39 > div > div:first-child > p:first-child {
-  margin-top: 8px;
-}
-.columns.columns39 > div > div:first-child > p:last-child {
-  margin-bottom: 0;
-}
-@media (max-width: 900px) {
-  .columns.columns39 {
-    flex-direction: column;
-    padding: 24px 4px;
-    gap: 24px;
-    min-width: 0;
-  }
-  .columns.columns39 > div {
-    gap: 16px;
-  }
-  .columns.columns39 > div > div:last-child .info-cards-row,
-  .columns.columns39 > div > div:last-child > .info-cards-row {
-    flex-direction: column;
-    gap: 8px;
-    align-items: stretch;
-  }
-  .columns.columns39 > div > div:last-child > p:has(img[width="20"][height="20"]) {
-    width: 100%;
-    min-width: 0;
-    max-width: 100%;
-    margin: 0 0 8px 0;
-    font-size: 20px;
-    padding: 16px 12px;
-  }
-}
-
-
 .columns.columns42 > div {
   display: flex;
   flex-direction: row;
@@ -1228,16 +991,12 @@
   background: transparent;
   column-gap: 48px;
 }
-
-/* Responsive: stack columns vertically on narrow screens */
 @media (max-width: 799px) {
   .columns.columns42 > div {
     flex-direction: column;
     column-gap: 0;
   }
 }
-
-/* Left column: illustration with light blue background, image aligns high */
 .columns.columns42 .columns-img-col {
   background: #eaf7ff;
   display: flex;
@@ -1249,8 +1008,6 @@
   width: 100%;
   height: 100%;
 }
-
-/* Ensure image fits nicely inside the left column */
 .columns.columns42 .columns-img-col picture,
 .columns.columns42 .columns-img-col img {
   display: block;
@@ -1258,8 +1015,6 @@
   max-height: 300px;
   object-fit: contain;
 }
-
-/* Right column: content top/left aligned with generous padding */
 .columns.columns42 > div > div:last-child {
   background: #fff;
   display: flex;
@@ -1273,8 +1028,6 @@
   width: 100%;
   height: 100%;
 }
-
-/* Headline: regular weight, dark gray, larger size, space below, compact width */
 .columns.columns42 > div > div:last-child p {
   margin: 0 0 12px 0;
   font-size: 20px;
@@ -1283,14 +1036,10 @@
   font-weight: 400;
   max-width: 340px;
 }
-
-/* Ensure strong headline is not bolded differently */
 .columns.columns42 > div > div:last-child p strong {
   font-weight: 400;
   color: #333333;
 }
-
-/* Date styling: muted gray, smaller, space above */
 .columns.columns42 > div > div:last-child p br + * {
   color: #999999;
   font-size: 14px;
@@ -1300,8 +1049,6 @@
 .columns.columns42 > div > div:last-child p {
   line-height: 1.6;
 }
-
-/* Fallback if date is plain text after <br> */
 .columns.columns42 > div > div:last-child p br + text,
 .columns.columns42 > div > div:last-child p br + span,
 .columns.columns42 > div > div:last-child p br + em {
@@ -1309,8 +1056,6 @@
   font-size: 14px;
   font-weight: 400;
 }
-
-/* Responsive: reduce padding on small screens */
 @media (max-width: 799px) {
   .columns.columns42 .columns-img-col,
   .columns.columns42 > div > div:last-child {
@@ -1318,5 +1063,338 @@
   }
   .columns.columns42 > div > div:last-child p {
     max-width: 100%;
+  }
+}
+
+
+.columns.columns39 {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  padding: 40px 32px;
+  margin: 40px auto;
+  max-width: 1280px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  gap: 32px;
+  justify-content: center;
+}
+
+@media (max-width: 900px) {
+  .columns.columns39 {
+    flex-direction: column;
+    padding: 20px 6px;
+    gap: 24px;
+  }
+}
+
+/* Main columns: each is a left/right flex row for form/info */
+.columns.columns39 > div {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 24px;
+  width: 100%;
+  max-width: 700px;
+}
+
+@media (max-width: 900px) {
+  .columns.columns39 > div {
+    flex-direction: column;
+    gap: 16px;
+    max-width: 100%;
+  }
+}
+
+/* Form section (left of each column) */
+.columns.columns39 > div > div:first-child {
+  flex: 0 1 340px;
+  max-width: 340px;
+  min-width: 240px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-right: 0;
+}
+
+/* Info section (right of each column) */
+.columns.columns39 > div > div:last-child {
+  flex: 0 1 180px;
+  max-width: 180px;
+  min-width: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 0;
+  padding-top: 4px;
+  gap: 0;
+}
+
+@media (max-width: 900px) {
+  .columns.columns39 > div > div:first-child,
+  .columns.columns39 > div > div:last-child {
+    max-width: 100%;
+    min-width: 0;
+    flex: 1 1 100%;
+    padding: 0;
+    margin: 0;
+    align-items: stretch;
+  }
+  .columns.columns39 > div > div:last-child {
+    align-items: center;
+  }
+}
+
+/* Tabs styling */
+.columns.columns39 > div > div:first-child .button-container {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 0 -1px 0;
+  padding: 0;
+}
+.columns.columns39 > div > div:first-child .button-container:nth-child(1),
+.columns.columns39 > div > div:first-child .button-container:nth-child(2) {
+  margin-right: 0;
+}
+.columns.columns39 > div > div:first-child .button-container:nth-child(1) .button,
+.columns.columns39 > div > div:first-child .button-container:nth-child(2) .button {
+  display: inline-block;
+  min-width: 120px;
+  border-radius: 8px 8px 0 0;
+  border: 1.5px solid #168039;
+  border-bottom: none;
+  background: #fff;
+  color: #168039;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 9px 28px 7px 28px;
+  margin-right: -4px;
+  position: relative;
+  box-shadow: none;
+  transition: background 0.2s, color 0.2s;
+  text-align: center;
+  line-height: 1.2;
+  outline: none;
+  margin-bottom: 0;
+}
+.columns.columns39 > div > div:first-child .button-container:nth-child(1) .button {
+  background: #168039;
+  color: #fff;
+  z-index: 1;
+}
+.columns.columns39 > div > div:first-child .button-container:nth-child(2) .button {
+  z-index: 0;
+}
+@media (max-width: 900px) {
+  .columns.columns39 > div > div:first-child .button-container {
+    display: block;
+  }
+  .columns.columns39 > div > div:first-child .button-container:nth-child(1) .button,
+  .columns.columns39 > div > div:first-child .button-container:nth-child(2) .button {
+    display: block;
+    width: 100%;
+    margin-right: 0;
+    border-radius: 8px 8px 0 0;
+    padding: 9px 0 7px 0;
+    min-width: 0;
+  }
+}
+
+/* Tabs spacing and grouping */
+.columns.columns39 > div > div:first-child .button-container:nth-child(2) .button {
+  margin-left: -3px;
+}
+.columns.columns39 > div > div:first-child .button-container:nth-child(1),
+.columns.columns39 > div > div:first-child .button-container:nth-child(2) {
+  margin-bottom: 0;
+}
+.columns.columns39 > div > div:first-child .button-container + .button-container {
+  margin-left: 0;
+}
+.columns.columns39 > div > div:first-child .button-container {
+  margin-top: 0;
+}
+.columns.columns39 > div > div:first-child .button-container:nth-child(2) {
+  margin-bottom: 2px;
+}
+.columns.columns39 > div > div:first-child > p:first-of-type {
+  margin-top: 0;
+}
+.columns.columns39 > div > div:first-child > .button-container:nth-child(2) {
+  margin-bottom: 6px;
+}
+
+/* Form labels & simulated input fields */
+.columns.columns39 > div > div:first-child > p {
+  color: #888;
+  font-size: 13px;
+  margin-top: 9px;
+  margin-bottom: 2px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-align: left;
+  line-height: 1.6;
+}
+.columns.columns39 > div > div:first-child > p + p {
+  /* Simulate input fields for immediately following p */
+  background: #fff;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 8px 14px;
+  color: #333;
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 0;
+  margin-top: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+.columns.columns39 > div > div:first-child > p {
+  margin-bottom: 0;
+}
+.columns.columns39 > div > div:first-child > p + p {
+  margin-bottom: 5px;
+  margin-top: 0;
+}
+
+/* Form submit button */
+.columns.columns39 > div > div:first-child .button-container:last-of-type .button,
+.columns.columns39 > div > div:first-child .button {
+  width: 100%;
+  padding: 12px 0;
+  border-radius: 6px;
+  background: #168039;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  margin: 14px 0 6px 0;
+  box-shadow: 0 2px 8px rgba(22,128,57,0.10);
+  display: block;
+}
+/* Always force form buttons to be green */
+.columns.columns39 > div > div:first-child .button,
+.columns.columns39 > div > div:first-child a.button {
+  background: #168039;
+  color: #fff;
+}
+
+/* Info/result area: center items and restrict width */
+.columns.columns39 > div > div:last-child {
+  align-items: center;
+  text-align: center;
+  max-width: 180px;
+  width: 100%;
+  padding-top: 2px;
+  gap: 0;
+}
+.columns.columns39 > div > div:last-child > p {
+  text-align: center;
+  font-size: 13px;
+  color: #888;
+  margin: 7px 0 0 0;
+  line-height: 1.5;
+  font-weight: 400;
+}
+.columns.columns39 > div > div:last-child > p:first-child {
+  margin-top: 0;
+  margin-bottom: 3px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+.columns.columns39 > div > div:last-child > p:first-child img,
+.columns.columns39 > div > div:last-child > p:first-child picture {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 2px auto;
+}
+
+/* Info cards: arrange two specific p's in a flex row */
+.columns.columns39 > div > div:last-child .info-cards-row {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  width: 100%;
+  justify-content: center;
+  margin: 4px 0 4px 0;
+}
+
+/* Try to match info cards using nth-child for this HTML */
+.columns.columns39 > div > div:last-child > p.info-card,
+.columns.columns39 > div > div:last-child > p[style*="border"],
+.columns.columns39 > div > div:last-child > p.card, 
+.columns.columns39 > div > div:last-child > p:nth-child(7),
+.columns.columns39 > div > div:last-child > p:nth-child(9) {
+  border: 1.5px solid #cce5d2;
+  background: #f6fbf6;
+  border-radius: 8px;
+  padding: 10px 10px 8px 10px;
+  min-width: 68px;
+  width: 82px;
+  text-align: center;
+  color: #168039;
+  font-weight: 600;
+  font-size: 13px;
+  box-shadow: 0 1px 4px rgba(22,128,57,0.04);
+  display: inline-block;
+  margin: 0 2px;
+  vertical-align: top;
+}
+
+/* Make the two cards horizontal by wrapping them in a flex row.
+   Selector: Two adjacent cards with a sibling relationship. */
+.columns.columns39 > div > div:last-child > p:nth-child(7),
+.columns.columns39 > div > div:last-child > p:nth-child(9) {
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+.columns.columns39 > div > div:last-child > p:nth-child(7) + p:nth-child(9) {
+  margin-left: 8px;
+}
+
+@media (max-width: 900px) {
+  .columns.columns39 > div > div:last-child {
+    max-width: 100%;
+    align-items: center;
+  }
+  .columns.columns39 > div > div:last-child .info-cards-row {
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+  }
+  .columns.columns39 > div > div:last-child > p.info-card,
+  .columns.columns39 > div > div:last-child > p[style*="border"],
+  .columns.columns39 > div > div:last-child > p.card, 
+  .columns.columns39 > div > div:last-child > p:nth-child(7),
+  .columns.columns39 > div > div:last-child > p:nth-child(9) {
+    width: 100%;
+    min-width: 0;
+    margin: 0 0 6px 0;
+    font-size: 13px;
+    padding: 9px 7px;
+  }
+}
+
+/* Remove extra margins from top/bottom of last/first items */
+.columns.columns39 > div > div:first-child > p:last-child,
+.columns.columns39 > div > div:last-child > p:last-child {
+  margin-bottom: 0;
+}
+
+@media (min-width: 1200px) {
+  .columns.columns39 > div {
+    max-width: 700px;
+  }
+  .columns.columns39 > div > div:first-child {
+    max-width: 340px;
+  }
+  .columns.columns39 > div > div:last-child {
+    max-width: 180px;
   }
 }
