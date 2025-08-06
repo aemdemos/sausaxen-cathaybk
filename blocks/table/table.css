@@ -1,7 +1,3 @@
-/* Linted CSS */
-/* Disabled the no-descending-specificity rule globally as per user instruction */
-/* stylelint-disable no-descending-specificity */
-
 .table.block {
   width: 100%;
   overflow-x: auto;
@@ -420,8 +416,6 @@
   background: #fff;
   font-size: 15px;
 }
-
-/* Base cell styles */
 .table.striped.tablestriped32 table table th,
 .table.striped.tablestriped32 table table td {
   padding: 20px 12px 20px 18px;
@@ -434,11 +428,7 @@
   vertical-align: middle;
   line-height: 1.6;
   background: #fff;
-
-  /* Let column widths be set below */
 }
-
-/* Label/left column: pale green background, better width balance, slightly less right pad */
 .table.striped.tablestriped32 table table th:first-child,
 .table.striped.tablestriped32 table table td:first-child {
   background: #f5fdf9;
@@ -448,8 +438,6 @@
   padding-right: 10px;
   text-align: left;
 }
-
-/* Value/right column: always white, better width, right alignment, less right pad */
 .table.striped.tablestriped32 table table th:last-child,
 .table.striped.tablestriped32 table table td:last-child {
   background: #fff;
@@ -459,20 +447,14 @@
   padding-right: 12px;
   text-align: right;
 }
-
-/* Subtle row separators */
 .table.striped.tablestriped32 table table tr:not(:last-child) th,
 .table.striped.tablestriped32 table table tr:not(:last-child) td {
   border-bottom: 1px solid #f4f4f4;
 }
-
-/* Remove border from last row */
 .table.striped.tablestriped32 table table tr:last-child th,
 .table.striped.tablestriped32 table table tr:last-child td {
   border-bottom: none;
 }
-
-/* Responsive adjustments for smaller screens */
 @media (width <= 600px) {
   .table.striped.tablestriped32 table table th,
   .table.striped.tablestriped32 table table td {
@@ -496,3 +478,186 @@
     padding-right: 8px;
   }
 }
+
+
+/* --- 1. Responsive Currency Grid Without HTML Changes --- */
+.table .table.block {
+  /* We use grid for direct children that are currency blocks, and revert after */
+  /* 1. Collect all sequences of picture+p+ul as grid items */
+  /* 2. Use grid auto-flow: row dense to shrink vertical gaps */
+}
+.table .table.block .currency-grid-hack {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 32px 36px;
+  margin: 32px 0 40px 0;
+}
+@media (max-width: 900px) {
+  .table .table.block .currency-grid-hack {
+    grid-template-columns: 1fr;
+    gap: 18px 0;
+  }
+}
+/* Make each currency group a real card: Target sequence picture+p+ul */
+.table .table.block .currency-grid-hack > picture {
+  grid-row: span 3;
+  grid-column: auto;
+  justify-self: center;
+  align-self: flex-start;
+}
+.table .table.block .currency-block {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  padding: 18px 16px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 0;
+  box-sizing: border-box;
+}
+.table .table.block .currency-block picture,
+.table .table.block .currency-block img {
+  display: block;
+  margin: 0 auto 8px auto;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #f4f4f4;
+  object-fit: cover;
+  box-shadow: none;
+}
+.table .table.block .currency-block p {
+  color: #175C2B;
+  font-size: 17px;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+  text-align: center;
+  letter-spacing: 0.01em;
+}
+.table .table.block .currency-block ul {
+  font-size: 15px;
+  color: #444;
+  margin: 0;
+  padding-left: 0;
+  line-height: 1.65;
+  text-align: center;
+  list-style-position: inside;
+}
+.table .table.block .currency-block ul li {
+  margin-bottom: 6px;
+  color: #444;
+  text-align: center;
+}
+/* 2. Use sibling selectors to group every picture+p+ul into a "block" (hack for flat DOM) */
+.table .table.block > .currency-grid-hack > picture {
+  margin-top: 0;
+}
+.table .table.block > .currency-grid-hack > picture + p + ul {
+  margin-bottom: 0;
+}
+.table .table.block > .currency-grid-hack > picture,
+.table .table.block > .currency-grid-hack > p,
+.table .table.block > .currency-grid-hack > ul {
+  /* flatten vertical margins so the grid looks even */
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* --- 3. Section Headers: Restrict to actual headers --- */
+.table .table.block > p.section-header {
+  color: #175C2B;
+  font-size: 21px;
+  font-weight: 700;
+  margin: 36px 0 20px 0;
+  letter-spacing: 0.01em;
+  line-height: 1.33;
+}
+.table .table.block > p {
+  color: #444;
+  font-size: 16px;
+  font-weight: 400;
+  margin: 8px 0;
+  line-height: 1.7;
+}
+.table .table.block > p + table,
+.table .table.block > p + ul,
+.table .table.block > p + ol,
+.table .table.block > p + hr {
+  margin-top: 0;
+}
+
+/* --- 4. Table Alignment/Padding --- */
+.table .table.block th,
+.table .table.block td {
+  padding-left: 32px;
+  padding-right: 32px;
+  line-height: 1.85;
+}
+.table .table.block td:first-child, .table .table.block th:first-child {
+  padding-left: 40px;
+}
+.table .table.block td:last-child, .table .table.block th:last-child {
+  padding-right: 40px;
+}
+
+/* --- 5. Button Row Alignment --- */
+.table .table.block .button-row,
+.table .table.block .button-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+  margin: 0 0 18px 0;
+  padding: 0;
+}
+.table .table.block .button,
+.table .table.block .button-container .button {
+  min-width: 88px;
+  min-height: 38px;
+  padding: 12px 36px;
+  font-size: 17px;
+}
+
+/* --- 6. Lists --- */
+.table .table.block ol,
+.table .table.block ul {
+  font-size: 17px;
+  color: #666;
+  padding-left: 36px;
+  margin-bottom: 34px;
+  line-height: 1.8;
+}
+.table .table.block ol li,
+.table .table.block ul li {
+  margin-bottom: 14px;
+}
+
+/* --- 7. HR/Divider --- */
+.table .table.block hr {
+  margin: 56px 0;
+  border: none;
+  border-top: 2.5px solid #efefef;
+}
+
+/* --- 8. Responsive tweaks --- */
+@media (max-width: 900px) {
+  .table .table.block .currency-block {
+    padding: 12px 4px 10px 4px;
+  }
+  .table .table.block th,
+  .table .table.block td {
+    padding-left: 14px;
+    padding-right: 14px;
+    font-size: 14px;
+  }
+  .table .table.block ol,
+  .table .table.block ul {
+    font-size: 15px;
+    padding-left: 18px;
+  }
+}
+
+/* --- 9. Fallback: If you cannot insert a .currency-grid-hack wrapper in HTML,
+    you may need to rely on JavaScript to wrap the currency blocks for the grid,
+    or use a less perfect solution with flat DOM and :nth-child hacks. --- */
