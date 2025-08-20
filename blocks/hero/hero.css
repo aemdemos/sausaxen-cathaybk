@@ -1,6 +1,4 @@
-/* Disable no-descending-specificity globally */ 
 /* stylelint-disable no-descending-specificity */
-
 .hero-container .hero-wrapper {
   max-width: unset;
   padding: 0;
@@ -305,7 +303,7 @@
 
 .hero.hero29 h2,
 .hero.hero29 h1 {
-  font-family: Arial, Helvetica, Verdana, Microsoft JhengHei, PingFangTC, sans-serif;
+  font-family: Arial, Helvetica, Verdana, "Microsoft JhengHei", PingFangTC, sans-serif;
   font-weight: 300;
   color: #333;
   font-size: 1.5rem;
@@ -579,7 +577,6 @@
   box-sizing: border-box;
 }
 
-/* Make the image act as the background, nudged further right */
 .hero.hero37 > div:first-child {
   position: absolute;
   inset: 0;
@@ -600,7 +597,6 @@
   object-position: 72% top;
 }
 
-/* Center the text content over the image, fine-tune upward nudge */
 .hero.hero37 > div:last-child {
   position: relative;
   z-index: 2;
@@ -613,7 +609,6 @@
   transform: translateY(-18px);
 }
 
-/* Limit text block width for better line length and centering */
 .hero.hero37 > div:last-child > div {
   max-width: 350px;
   width: 100%;
@@ -625,7 +620,6 @@
   margin: 0 auto;
 }
 
-/* Headline */
 .hero.hero37 > div:last-child p:first-child {
   font-size: 20px;
   font-weight: 500;
@@ -635,7 +629,6 @@
   text-align: center;
 }
 
-/* Subheadline */
 .hero.hero37 > div:last-child p:last-child {
   font-size: 14px;
   font-weight: 400;
@@ -646,7 +639,6 @@
   letter-spacing: 0.04em;
 }
 
-/* Responsive: keep text centered and adjust height for smaller screens */
 @media (width <= 900px) {
   .hero.hero37 {
     min-height: 160px;
@@ -664,7 +656,6 @@
   }
 }
 
-/* Remove unwanted global spacing on hero text */
 .hero.hero37 h1,
 .hero.hero37 h2,
 .hero.hero37 h3,
@@ -676,4 +667,169 @@
   color: #333;
   max-width: none;
   text-align: center;
+}
+
+
+.hero.hero60 {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: center;
+  min-height: 340px;
+  width: 100vw;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(90deg, #fff 0%, #d8f7e7 40%, #8ed8a5 100%);
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+}
+
+.hero.hero60 > div {
+  display: flex;
+  flex-direction: row;
+  flex: 1 1 0;
+  align-items: stretch;
+  justify-content: center;
+  width: 100%;
+}
+
+.hero.hero60 > div:first-child {
+  flex: 0 0 48px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  height: 100%;
+  min-width: 40px;
+  padding-right: 8px;
+  display: flex;
+}
+
+.hero.hero60 > div:first-child img {
+  width: 32px;
+  height: 124px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+  filter: grayscale(1) opacity(0.5);
+  align-self: center;
+}
+
+.hero.hero60 > div:last-child {
+  flex: 1 1 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 320px;
+  z-index: 1;
+  display: flex;
+}
+
+.hero.hero60 > div:last-child > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  width: 100%;
+  margin-top: 0;
+}
+
+.hero.hero60 > div:last-child p:first-child {
+  color: #3c3c3c;
+  font-size: 26px;
+  font-weight: 700;
+  margin: 0;
+  text-align: center;
+  letter-spacing: 0.03em;
+}
+
+.hero.hero60 > div:last-child p:nth-child(2) {
+  color: #8c8c8c;
+  font-size: 15px;
+  margin: 0;
+  text-align: center;
+  letter-spacing: 0.03em;
+  font-weight: 400;
+}
+
+.hero.hero60 .button-container {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.hero.hero60 .button-container .button {
+  background: #065c37;
+  color: #fff;
+  font-size: 17px;
+  padding: 12px 52px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: 0.06em;
+  min-width: 120px;
+  margin: 0;
+  box-shadow: none;
+  transition: background 0.2s;
+  display: inline-block;
+}
+
+.hero.hero60 .button-container .button:hover,
+.hero.hero60 .button-container .button:focus {
+  background: #04824b;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Background decorative shape: larger, more visible, more left-shifted */
+.hero.hero60::before {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 720px;
+  height: 100%;
+  background: url('https://upload.wikimedia.org/wikipedia/commons/6/6b/User_icon_2.svg') right center/contain no-repeat;
+  opacity: 0.29;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Responsive: stack columns on mobile */
+@media (width <= 900px) {
+  .hero.hero60 {
+    flex-direction: column;
+    min-height: 260px;
+    padding: 0;
+  }
+
+  .hero.hero60 > div {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero.hero60 > div:first-child {
+    display: none;
+  }
+
+  .hero.hero60 > div:last-child > div {
+    margin-top: 0;
+  }
+
+  .hero.hero60 > div:last-child {
+    min-width: 0;
+    padding-top: 18px;
+    padding-bottom: 18px;
+  }
+
+  .hero.hero60::before {
+    width: 100vw;
+    min-width: 240px;
+    opacity: 0.14;
+    right: 0;
+  }
 }
