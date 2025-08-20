@@ -559,169 +559,6 @@
 }
 
 
-.hero.hero60 {
-  display: flex;
-  flex-direction: row;
-  align-items: stretch;
-  justify-content: center;
-  min-height: 340px;
-  width: 100vw;
-  margin-left: 50%;
-  transform: translateX(-50%);
-  background: linear-gradient(90deg, #fff 0%, #d8f7e7 40%, #8ed8a5 100%);
-  position: relative;
-  overflow: hidden;
-  padding: 0;
-}
-
-.hero.hero60 > div {
-  display: flex;
-  flex-direction: row;
-  flex: 1 1 0;
-  align-items: stretch;
-  justify-content: center;
-  width: 100%;
-}
-
-.hero.hero60 > div:first-child {
-  flex: 0 0 48px;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-end;
-  height: 100%;
-  min-width: 40px;
-  padding-right: 8px;
-  display: flex;
-}
-
-.hero.hero60 > div:first-child img {
-  width: 32px;
-  height: 124px;
-  object-fit: contain;
-  display: block;
-  margin: 0 auto;
-  filter: grayscale(1) opacity(0.5);
-  align-self: center;
-}
-
-.hero.hero60 > div:last-child {
-  flex: 1 1 0;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-width: 320px;
-  z-index: 1;
-  display: flex;
-}
-
-.hero.hero60 > div:last-child > div {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 18px;
-  width: 100%;
-  margin-top: 0;
-}
-
-.hero.hero60 > div:last-child p:first-child {
-  color: #3c3c3c;
-  font-size: 26px;
-  font-weight: 700;
-  margin: 0;
-  text-align: center;
-  letter-spacing: 0.03em;
-}
-
-.hero.hero60 > div:last-child p:nth-child(2) {
-  color: #8c8c8c;
-  font-size: 15px;
-  margin: 0;
-  text-align: center;
-  letter-spacing: 0.03em;
-  font-weight: 400;
-}
-
-.hero.hero60 .button-container {
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-
-.hero.hero60 .button-container .button {
-  background: #065c37;
-  color: #fff;
-  font-size: 17px;
-  padding: 12px 52px;
-  border-radius: 8px;
-  border: none;
-  font-weight: 700;
-  text-align: center;
-  letter-spacing: 0.06em;
-  min-width: 120px;
-  margin: 0;
-  box-shadow: none;
-  transition: background 0.2s;
-  display: inline-block;
-}
-
-.hero.hero60 .button-container .button:hover,
-.hero.hero60 .button-container .button:focus {
-  background: #04824b;
-  color: #fff;
-  text-decoration: none;
-}
-
-.hero.hero60::before {
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 720px;
-  height: 100%;
-  background: url('https://upload.wikimedia.org/wikipedia/commons/6/6b/User_icon_2.svg') right center/contain no-repeat;
-  opacity: 0.29;
-  z-index: 0;
-  pointer-events: none;
-}
-
-@media (width <= 900px) {
-  .hero.hero60 {
-    flex-direction: column;
-    min-height: 260px;
-    padding: 0;
-  }
-
-  .hero.hero60 > div {
-    flex-direction: column;
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .hero.hero60 > div:first-child {
-    display: none;
-  }
-
-  .hero.hero60 > div:last-child > div {
-    margin-top: 0;
-  }
-
-  .hero.hero60 > div:last-child {
-    min-width: 0;
-    padding-top: 18px;
-    padding-bottom: 18px;
-  }
-
-  .hero.hero60::before {
-    width: 100vw;
-    min-width: 240px;
-    opacity: 0.14;
-    right: 0;
-  }
-}
-
-
 .hero.hero34 {
   display: flex;
   flex-direction: row;
@@ -737,7 +574,6 @@
   position: relative;
 }
 
-/* Columns: direct children of .hero34 */
 .hero.hero34 > div {
   display: flex;
   flex-direction: row;
@@ -747,7 +583,6 @@
   padding: 0;
 }
 
-/* LEFT COLUMN: image side */
 .hero.hero34 > div:first-child {
   flex: 0 0 120px;
   min-width: 100px;
@@ -769,7 +604,6 @@
   height: 100%;
 }
 
-/* Image sizing and alignment for nested structure */
 .hero.hero34 > div:first-child picture,
 .hero.hero34 > div:first-child img {
   display: block;
@@ -781,7 +615,6 @@
   margin: 0 auto;
 }
 
-/* RIGHT COLUMN: text content */
 .hero.hero34 > div:last-child {
   flex: 1 1 0;
   display: flex;
@@ -794,7 +627,6 @@
   height: 100%;
 }
 
-/* Inner stack for text content */
 .hero.hero34 > div:last-child > div {
   display: flex;
   flex-direction: column;
@@ -804,7 +636,6 @@
   min-width: 0;
 }
 
-/* Headings and text colors for contrast */
 .hero.hero34 h1,
 .hero.hero34 h2,
 .hero.hero34 h3,
@@ -843,7 +674,6 @@
   font-weight: 400;
 }
 
-/* Responsive: stack columns vertically */
 @media (width <= 750px) {
   .hero.hero34 {
     flex-direction: column;
@@ -883,4 +713,212 @@
   .hero.hero34 > div:last-child > div {
     gap: 5px;
   }
+}
+
+
+.hero.hero60 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  min-height: 220px;
+  background: linear-gradient(90deg, #fff 0%, #e3f7ea 50%, #7ad59c 100%);
+  position: relative;
+  overflow: hidden;
+  padding-top: 44px;
+  padding-bottom: 44px;
+  box-sizing: border-box;
+}
+
+/* Subtle, large background graphic */
+.hero.hero60::after {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 78vw;
+  height: 100%;
+  background: url('https://upload.wikimedia.org/wikipedia/commons/6/6b/User_icon_2.svg') right center/contain no-repeat;
+  opacity: 0.17;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Remove the left placeholder from flow on desktop to allow true centering */
+@media (width >= 901px) {
+  .hero.hero60 > div > div:first-child {
+    position: absolute;
+    left: 0;
+    top: 52%;
+    transform: translateY(-50%);
+    min-width: 32px;
+    max-width: 40px;
+    height: 120px;
+    margin: 0;
+    padding: 0;
+    opacity: 0.1;
+    pointer-events: none;
+    z-index: 2;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  .hero.hero60 > div {
+    position: relative;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .hero.hero60 > div > div:first-child img {
+    width: 24px;
+    height: 110px;
+    object-fit: contain;
+    display: block;
+    opacity: 0.08;
+    margin: 0;
+    filter: grayscale(1);
+    border-radius: 6px;
+  }
+
+  /* Main (right) column should center content block in hero */
+  .hero.hero60 > div > div:last-child {
+    margin: 0 auto;
+    flex: 0 1 420px;
+    max-width: 440px;
+    min-width: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    filter: none;
+  }
+}
+
+/* Mobile/tablet: stack and allow left column to disappear */
+@media (width <= 900px) {
+  .hero.hero60 {
+    flex-direction: column;
+    min-height: 180px;
+    padding-top: 22px;
+    padding-bottom: 22px;
+  }
+
+  .hero.hero60 > div {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 98vw;
+    padding-left: 0;
+    padding-right: 0;
+    position: static;
+  }
+
+  .hero.hero60 > div > div:first-child {
+    display: none;
+  }
+
+  .hero.hero60 > div > div:last-child {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    min-width: 0;
+    width: 100%;
+    margin: 0 auto;
+    opacity: 1;
+    filter: none;
+  }
+
+  .hero.hero60::after {
+    width: 100vw;
+    min-width: 220px;
+    opacity: 0.10;
+    right: 0;
+  }
+}
+
+/* Stack heading, subtitle, button */
+.hero.hero60 > div > div:last-child > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  width: 100%;
+  margin-top: 0;
+  opacity: 1;
+  filter: none;
+}
+
+/* Heading */
+.hero.hero60 > div > div:last-child p:first-child {
+  color: #205c3b;
+  font-size: 31px;
+  font-weight: 800;
+  margin: 0 0 4px;
+  text-align: center;
+  letter-spacing: 0.012em;
+  line-height: 1.17;
+  opacity: 1;
+  filter: none;
+}
+
+/* Subtitle */
+.hero.hero60 > div > div:last-child p:nth-child(2) {
+  color: #638a74;
+  font-size: 16px;
+  margin: 0 0 22px;
+  text-align: center;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  opacity: 1;
+  filter: none;
+}
+
+/* Button container */
+.hero.hero60 .button-container {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  opacity: 1;
+  filter: none;
+}
+
+/* Button override - more squared and larger, full color */
+.hero.hero60 .button-container .button {
+  background: #015835;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 12px 46px;
+  border-radius: 6px;
+  border: none;
+  text-align: center;
+  min-width: 120px;
+  margin: 0;
+  box-shadow: none;
+  transition: background 0.2s;
+  display: inline-block;
+  opacity: 1;
+  filter: none;
+}
+
+/* Override accidental disabled/faded state */
+.hero.hero60 .button-container .button[disabled] {
+  background: #015835;
+  color: #fff;
+  opacity: 1;
+  filter: none;
+}
+
+.hero.hero60 .button-container .button:hover,
+.hero.hero60 .button-container .button:focus {
+  background: #013d25;
+  color: #fff;
+  text-decoration: none;
+  opacity: 1;
+  filter: none;
 }
